@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nippon Heritage | Import de motos japonaises 2 temps</title>
+    <meta
+      name="description"
+      content="Nippon Heritage importe du Japon des motos de collection 2 temps de plus de 30 ans, les remet en etat en France et les propose a la vente."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="top-strip">
+      <div class="container top-strip-inner">
+        <p>Import selectif depuis le Japon • 2 temps de collection • Atelier en France</p>
+        <div class="lang-switch" aria-label="Langues disponibles">
+          <span class="is-active">FR</span>
+          <span>EN</span>
+          <span>ES</span>
+          <span>IT</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header" id="accueil">
+      <div class="container nav-shell">
+        <a class="brand-plate" href="#accueil" aria-label="Nippon Heritage">
+          <img
+            src="assets/images/nippon-heritage-logo.png"
+            alt="Logo Nippon Heritage"
+          />
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+          aria-label="Ouvrir le menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Navigation principale">
+          <a href="#accueil">Accueil</a>
+          <a href="#stock">Motos en stock</a>
+          <a href="#commande">Recherche personnalisee</a>
+          <a href="#services">Nos services</a>
+          <a href="#atelier">Atelier</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="header-cta" href="#commande">Faire une demande</a>
+      </div>
+    </header>
+
+    <aside class="floating-rail" aria-label="Acces rapides">
+      <a href="#stock">Stock</a>
+      <a href="#commande">Demande</a>
+      <a href="#contact">Contact</a>
+    </aside>
+
+    <main>
+      <section class="hero">
+        <div class="hero-backdrop"></div>
+        <div class="container hero-layout">
+          <div class="hero-card">
+            <p class="kicker">Nippon Heritage • Motos japonaises de collection</p>
+            <h1>Specialiste de l'import de motos 2 temps de plus de 30 ans.</h1>
+            <div class="accent-line" aria-hidden="true"></div>
+            <p class="hero-text">
+              Nous sourcons au Japon des motos saines, peu kilometrees et desirables,
+              puis nous les remettons en etat en France avant la revente. Pas
+              d'homologation, pas de volume inutile, uniquement des bases choisies.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#stock">Voir les modeles</a>
+              <a class="button button-secondary" href="#commande">Recherche sur commande</a>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <article>
+              <span>01</span>
+              <strong>Selection au Japon</strong>
+              <p>Nous visons des motos coherentes, propres et interessantes pour la collection.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <strong>Passage atelier</strong>
+              <p>Controle, remise en etat et presentation avant la mise en vente en France.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <strong>Positionnement clair</strong>
+              <p>Import, remise en etat, vente. Aucune rubrique homologation n'est proposee.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="container section-band-inner">
+          <span>Import moto de collection</span>
+          <span>2 temps uniquement</span>
+          <span>Japon</span>
+          <span>Faible kilometrage privilegie</span>
+          <span>Atelier en France</span>
+          <span>Selection rigoureuse</span>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="stock">
+        <div class="container">
+          <div class="section-heading centered">
+            <p class="section-kicker">MOTOS EN STOCK</p>
+            <h2>Exemples d'arrivages et de modeles suivis.</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+            <p>
+              Cette maquette reprend l'esprit catalogue de tes references avec un vrai
+              bloc de filtres, des fiches motos et un ton plus premium.
+            </p>
+          </div>
+
+          <div class="catalog-layout">
+            <aside class="filters-card">
+              <div class="filter-block">
+                <label class="filter-label" for="stock-search">Rechercher</label>
+                <input
+                  id="stock-search"
+                  class="filter-input"
+                  type="search"
+                  placeholder="NSR, TZR, RGV..."
+                />
+              </div>
+
+              <div class="filter-block">
+                <label class="filter-label" for="brand-filter">Filtrer par marque</label>
+                <select id="brand-filter" class="filter-input">
+                  <option value="all">Toutes les marques</option>
+                  <option value="Honda">Honda</option>
+                  <option value="Yamaha">Yamaha</option>
+                  <option value="Suzuki">Suzuki</option>
+                  <option value="Kawasaki">Kawasaki</option>
+                </select>
+              </div>
+
+              <div class="filter-block">
+                <label class="filter-label" for="type-filter">Filtrer par type</label>
+                <select id="type-filter" class="filter-input">
+                  <option value="all">Tous les types</option>
+                  <option value="Sportive">Sportive</option>
+                  <option value="Roadster">Roadster</option>
+                  <option value="Rarete">Rarete</option>
+                </select>
+              </div>
+
+              <div class="filter-block">
+                <div class="range-heading">
+                  <label class="filter-label" for="budget-filter">Budget maximum</label>
+                  <strong id="budget-output">25 000 EUR</strong>
+                </div>
+                <input
+                  id="budget-filter"
+                  type="range"
+                  min="5000"
+                  max="25000"
+                  step="500"
+                  value="25000"
+                />
+              </div>
+
+              <div class="filter-block">
+                <label class="filter-label" for="sort-filter">Trier</label>
+                <select id="sort-filter" class="filter-input">
+                  <option value="year-desc">Annee recente</option>
+                  <option value="price-asc">Prix croissant</option>
+                  <option value="price-desc">Prix decroissant</option>
+                  <option value="year-asc">Annee ancienne</option>
+                </select>
+              </div>
+
+              <button class="button button-secondary button-full" id="reset-filters" type="button">
+                Reinitialiser les filtres
+              </button>
+            </aside>
+
+            <div class="catalog-main">
+              <div class="catalog-toolbar">
+                <div class="result-pill">
+                  <span id="stock-count">6</span> modeles affiches
+                </div>
+                <p class="toolbar-note">Catalogue de presentation dans le style de ta reference.</p>
+              </div>
+
+              <div class="stock-grid" id="stock-grid">
+                <article
+                  class="stock-card"
+                  data-brand="Honda"
+                  data-type="Sportive"
+                  data-price="18900"
+                  data-year="1992"
+                  data-search="honda nsr250r mc21 sportive 250 japon"
+                >
+                  <img src="assets/images/blue-classic.jpg" alt="Moto sportive bleue stationnee" />
+                  <div class="stock-card-body">
+                    <div class="stock-badges">
+                      <span>1992</span>
+                      <span>250 cc</span>
+                      <span>Japon</span>
+                    </div>
+                    <h3>Honda NSR250R MC21</h3>
+                    <p>Sportive 2 temps emblematiques, base saine privilegiee pour une vente collection.</p>
+                    <div class="stock-footer">
+                      <strong>18 900 EUR</strong>
+                      <a href="#commande">Voir plus</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="stock-card"
+                  data-brand="Yamaha"
+                  data-type="Sportive"
+                  data-price="17600"
+                  data-year="1991"
+                  data-search="yamaha tzr250 3xv sportive 250 japon"
+                >
+                  <img src="assets/images/collection.jpg" alt="Moto en atelier dans une ambiance collection" />
+                  <div class="stock-card-body">
+                    <div class="stock-badges">
+                      <span>1991</span>
+                      <span>250 cc</span>
+                      <span>Japon</span>
+                    </div>
+                    <h3>Yamaha TZR250 3XV</h3>
+                    <p>Profil sport collection pour passionnes de 2 temps japonais a forte identite.</p>
+                    <div class="stock-footer">
+                      <strong>17 600 EUR</strong>
+                      <a href="#commande">Voir plus</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="stock-card"
+                  data-brand="Suzuki"
+                  data-type="Sportive"
+                  data-price="19800"
+                  data-year="1993"
+                  data-search="suzuki rgv250 gamma sportive 250 japon"
+                >
+                  <img src="assets/images/sunset-bike.jpg" alt="Moto vue en contre-jour au coucher du soleil" />
+                  <div class="stock-card-body">
+                    <div class="stock-badges">
+                      <span>1993</span>
+                      <span>250 cc</span>
+                      <span>Japon</span>
+                    </div>
+                    <h3>Suzuki RGV250 Gamma</h3>
+                    <p>Machine plus pointue, destinee a une clientele qui cherche une vraie rarete sportive.</p>
+                    <div class="stock-footer">
+                      <strong>19 800 EUR</strong>
+                      <a href="#commande">Voir plus</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="stock-card"
+                  data-brand="Kawasaki"
+                  data-type="Rarete"
+                  data-price="15400"
+                  data-year="1990"
+                  data-search="kawasaki kr-1s rarete 250 japon"
+                >
+                  <img src="assets/images/kawasaki-red.jpg" alt="Reservoir Kawasaki rouge en gros plan" />
+                  <div class="stock-card-body">
+                    <div class="stock-badges">
+                      <span>1990</span>
+                      <span>250 cc</span>
+                      <span>Japon</span>
+                    </div>
+                    <h3>Kawasaki KR-1S</h3>
+                    <p>Positionnement expert et niche, parfait pour une identite de specialiste assume.</p>
+                    <div class="stock-footer">
+                      <strong>15 400 EUR</strong>
+                      <a href="#commande">Voir plus</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="stock-card"
+                  data-brand="Yamaha"
+                  data-type="Roadster"
+                  data-price="13200"
+                  data-year="1991"
+                  data-search="yamaha r1-z roadster 250 japon"
+                >
+                  <img src="assets/images/yamaha-detail.jpg" alt="Detail moteur Yamaha" />
+                  <div class="stock-card-body">
+                    <div class="stock-badges">
+                      <span>1991</span>
+                      <span>250 cc</span>
+                      <span>Japon</span>
+                    </div>
+                    <h3>Yamaha R1-Z</h3>
+                    <p>Roadster 2 temps tres caractere, interessant pour differencier l'offre du catalogue.</p>
+                    <div class="stock-footer">
+                      <strong>13 200 EUR</strong>
+                      <a href="#commande">Voir plus</a>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  class="stock-card"
+                  data-brand="Honda"
+                  data-type="Rarete"
+                  data-price="21900"
+                  data-year="1985"
+                  data-search="honda ns400r rarete 400 japon"
+                >
+                  <img src="assets/images/hero-classic.jpg" alt="Moto classique exposee en vitrine" />
+                  <div class="stock-card-body">
+                    <div class="stock-badges">
+                      <span>1985</span>
+                      <span>400 cc</span>
+                      <span>Japon</span>
+                    </div>
+                    <h3>Honda NS400R</h3>
+                    <p>Une piece plus rare, selectionnee pour renforcer le positionnement heritage de la marque.</p>
+                    <div class="stock-footer">
+                      <strong>21 900 EUR</strong>
+                      <a href="#commande">Voir plus</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-section" id="commande">
+        <div class="container">
+          <div class="section-heading centered on-dark">
+            <p class="section-kicker">RECHERCHE PERSONNALISEE</p>
+            <h2>Une moto precise en tete ? Nous pouvons la rechercher pour toi.</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+            <p>
+              Le formulaire reprend l'esprit de ta reference mais l'adapte a ton activite:
+              recherche ciblee, budget, base saine, motos 2 temps de collection uniquement.
+            </p>
+          </div>
+
+          <form class="search-form" id="search-form">
+            <label>
+              <span>Marque</span>
+              <input type="text" name="brand" placeholder="Honda, Yamaha, Suzuki..." />
+            </label>
+            <label>
+              <span>Modele</span>
+              <input type="text" name="model" placeholder="NSR250R, TZR250, RGV250..." />
+            </label>
+            <label>
+              <span>Type</span>
+              <select name="type">
+                <option value="">Sportive, roadster, rarete...</option>
+                <option>Sportive</option>
+                <option>Roadster</option>
+                <option>Rarete</option>
+              </select>
+            </label>
+            <label>
+              <span>Annee minimale</span>
+              <input type="number" name="year" min="1970" max="1996" placeholder="Ex: 1988" />
+            </label>
+            <label>
+              <span>Cylindree</span>
+              <input type="text" name="engine" placeholder="250 cc, 350 cc, 400 cc..." />
+            </label>
+            <label class="range-box">
+              <span>Budget cible</span>
+              <div class="range-shell">
+                <input id="search-budget" type="range" min="7000" max="30000" step="500" value="18000" />
+                <strong id="search-budget-output">18 000 EUR</strong>
+              </div>
+            </label>
+            <label>
+              <span>Nom</span>
+              <input type="text" name="name" placeholder="Votre nom" />
+            </label>
+            <label>
+              <span>Prenom</span>
+              <input type="text" name="firstname" placeholder="Votre prenom" />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="votre@email.fr" />
+            </label>
+            <label>
+              <span>Telephone</span>
+              <input type="tel" name="phone" placeholder="Votre numero" />
+            </label>
+            <label class="full-width">
+              <span>Informations complementaires</span>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Precise la moto recherchee, l'etat souhaite, les couleurs, la tolerence kilometrage ou ton objectif collection."
+              ></textarea>
+            </label>
+            <div class="form-actions full-width">
+              <button class="button button-primary" type="submit">Envoyer la demande</button>
+              <p class="form-feedback" id="search-feedback" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="services-section" id="services">
+        <div class="container">
+          <div class="section-heading centered">
+            <p class="section-kicker">NOS SERVICES</p>
+            <h2>Import, selection, atelier et vente de motos preparees.</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+          </div>
+
+          <div class="service-stack">
+            <article class="service-row">
+              <div class="service-copy">
+                <h3>Import selectif depuis le Japon</h3>
+                <p>
+                  Le sourcing ne vise pas la quantite. Chaque moto est choisie pour sa
+                  coherence, son etat de depart et sa valeur potentielle une fois remise
+                  en presentation pour le marche francais.
+                </p>
+                <ul>
+                  <li>Recherche de motos de plus de 30 ans</li>
+                  <li>Priorite aux bases saines et peu kilometrees</li>
+                  <li>Selection adaptee a une clientele collection</li>
+                </ul>
+              </div>
+              <div class="service-visual">
+                <img src="assets/images/showroom-lineup.jpg" alt="Alignement de motos en showroom" />
+              </div>
+            </article>
+
+            <article class="service-row reverse">
+              <div class="service-copy">
+                <h3>Remise en etat atelier avant mise en vente</h3>
+                <p>
+                  Tu ne proposes pas une importation brute. Le site insiste donc sur le
+                  controle, la mise au propre, la presentation et la coherence mecanique
+                  avant qu'une moto n'arrive dans les mains d'un acheteur.
+                </p>
+                <ul>
+                  <li>Controle visuel et technique a reception</li>
+                  <li>Interventions selon l'etat reel de la machine</li>
+                  <li>Presentation propre et valorisante avant diffusion</li>
+                </ul>
+              </div>
+              <div class="service-visual">
+                <img src="assets/images/yamaha-detail.jpg" alt="Gros plan d'un moteur Yamaha en atelier" />
+              </div>
+            </article>
+
+            <article class="service-row">
+              <div class="service-copy">
+                <h3>Vente de motos de collection a forte personnalite</h3>
+                <p>
+                  Le discours commercial est recentre sur la desirabilite, la confiance et
+                  la rarete. C'est plus premium, plus clair et plus proche du niveau de
+                  presentation que tu voulais atteindre.
+                </p>
+                <ul>
+                  <li>Catalogue lisible et plus haut de gamme</li>
+                  <li>Recherche personnalisee pour demandes precises</li>
+                  <li>Aucune rubrique homologation integree au site</li>
+                </ul>
+              </div>
+              <div class="service-visual">
+                <img src="assets/images/paris-cafe.jpg" alt="Moto noire garee dans une rue urbaine" />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="atelier-section" id="atelier">
+        <div class="container">
+          <div class="section-heading centered on-dark">
+            <p class="section-kicker">ATELIER & METHODE</p>
+            <h2>Une methode courte, lisible et credible.</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+            <p>
+              Le site raconte tres clairement comment une moto arrive jusqu'a la vente,
+              sans promettre de services que tu ne veux pas proposer.
+            </p>
+          </div>
+
+          <div class="method-grid">
+            <article>
+              <span>01</span>
+              <h3>Reperage</h3>
+              <p>Veille des modeles suivis, lecture de l'etat reel et tri rigoureux des opportunites.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Achat cible</h3>
+              <p>Priorite aux motos completes, desirables et adaptees a une remise en etat serieuse.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Preparation</h3>
+              <p>Controle, nettoyage, intervention atelier et mise en presentation avant publication.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Vente</h3>
+              <p>Diffusion plus premium, echange direct avec les acheteurs et recherche sur commande.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="container contact-layout">
+          <div class="contact-copy">
+            <p class="section-kicker">CONTACT</p>
+            <h2>Un site pense pour inspirer confiance et convertir.</h2>
+            <div class="accent-line" aria-hidden="true"></div>
+            <p>
+              La base est maintenant beaucoup plus proche de tes captures: noir, orange,
+              hero photo, catalogue, recherche personnalisee et services en blocs.
+              Il restera a brancher tes vraies coordonnees et tes vrais stocks.
+            </p>
+          </div>
+
+          <div class="contact-panels">
+            <article>
+              <strong>Positionnement</strong>
+              <p>Import selectif de motos 2 temps japonaises de collection, remises en etat puis revendues en France.</p>
+            </article>
+            <article>
+              <strong>Navigation</strong>
+              <p>Le site met en avant les modeles en stock, la recherche sur commande, l'atelier et le contact.</p>
+            </article>
+            <article>
+              <strong>Etape suivante</strong>
+              <p>On pourra ensuite remplacer les exemples par tes vraies motos, tes vrais textes et tes coordonnees.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/nippon-heritage-logo.png" alt="Logo Nippon Heritage" />
+          <p>Nippon Heritage • Import de motos japonaises 2 temps de collection.</p>
+        </div>
+        <div class="footer-note">
+          <p>Visuels gratuits telecharges depuis Unsplash.</p>
+          <p><span id="year"></span> • Maquette de lancement orientee conversion.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
