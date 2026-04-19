@@ -18,7 +18,8 @@ const resetFilters = document.getElementById("reset-filters");
 const searchBudget = document.getElementById("search-budget");
 const searchBudgetOutput = document.getElementById("search-budget-output");
 const searchForm = document.getElementById("search-form");
-const searchFeedback = document.getElementById("search-feedback");
+const formNext = document.getElementById("form-next");
+const formUrl = document.getElementById("form-url");
 
 const formatEuros = (value) =>
   new Intl.NumberFormat("fr-FR", {
@@ -137,13 +138,14 @@ if (searchBudget) {
   updateSearchBudget();
 }
 
-if (searchForm && searchFeedback) {
-  searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    searchFeedback.textContent =
-      "Formulaire de maquette pret. Il ne reste qu'a le connecter a ton email pro ou a ton outil de gestion des demandes.";
-    searchForm.reset();
-    if (searchBudget) searchBudget.value = "18000";
-    updateSearchBudget();
-  });
+if (searchForm) {
+  const origin = window.location.origin;
+
+  if (formNext) {
+    formNext.value = `${origin}/merci.html`;
+  }
+
+  if (formUrl) {
+    formUrl.value = window.location.href;
+  }
 }

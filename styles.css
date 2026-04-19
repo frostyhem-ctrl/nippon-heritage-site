@@ -747,6 +747,14 @@ input[type="range"] {
   color: rgba(247, 243, 239, 0.82);
 }
 
+.form-hidden {
+  display: none !important;
+}
+
+.thank-you-page {
+  min-height: 100vh;
+}
+
 .service-stack {
   display: grid;
   gap: 22px;

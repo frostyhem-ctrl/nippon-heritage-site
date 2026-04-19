@@ -75,7 +75,7 @@
         <div class="container hero-layout">
           <div class="hero-card">
             <p class="kicker">Nippon Heritage • Motos japonaises de collection</p>
-            <h1>Specialiste de l'import de motos 2 temps de plus de 30 ans.</h1>
+            <h1>Specialiste de l'import de motos 2 temps japonaises.</h1>
             <div class="accent-line" aria-hidden="true"></div>
             <p class="hero-text">
               Nous sourcons au Japon des motos saines, peu kilometrees et desirables,
@@ -365,7 +365,23 @@
             </p>
           </div>
 
-          <form class="search-form" id="search-form">
+          <form
+            class="search-form"
+            id="search-form"
+            action="https://formsubmit.co/frostyhem@gmail.com"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Nouvelle demande depuis Nippon Heritage" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" id="form-next" value="" />
+            <input type="hidden" name="_url" id="form-url" value="" />
+            <input
+              type="text"
+              name="_honey"
+              class="form-hidden"
+              tabindex="-1"
+              autocomplete="off"
+            />
             <label>
               <span>Marque</span>
               <input type="text" name="brand" placeholder="Honda, Yamaha, Suzuki..." />
@@ -400,7 +416,7 @@
             </label>
             <label>
               <span>Nom</span>
-              <input type="text" name="name" placeholder="Votre nom" />
+              <input type="text" name="name" placeholder="Votre nom" required />
             </label>
             <label>
               <span>Prenom</span>
@@ -408,7 +424,7 @@
             </label>
             <label>
               <span>Email</span>
-              <input type="email" name="email" placeholder="votre@email.fr" />
+              <input type="email" name="email" placeholder="votre@email.fr" required />
             </label>
             <label>
               <span>Telephone</span>
@@ -420,11 +436,12 @@
                 name="message"
                 rows="5"
                 placeholder="Precise la moto recherchee, l'etat souhaite, les couleurs, la tolerence kilometrage ou ton objectif collection."
+                required
               ></textarea>
             </label>
             <div class="form-actions full-width">
               <button class="button button-primary" type="submit">Envoyer la demande</button>
-              <p class="form-feedback" id="search-feedback" role="status" aria-live="polite"></p>
+              <p class="form-feedback">Envoi direct des demandes sur frostyhem@gmail.com.</p>
             </div>
           </form>
         </div>
@@ -545,7 +562,7 @@
             <p>
               La base est maintenant beaucoup plus proche de tes captures: noir, orange,
               hero photo, catalogue, recherche personnalisee et services en blocs.
-              Il restera a brancher tes vraies coordonnees et tes vrais stocks.
+              Le formulaire envoie maintenant les demandes directement par email.
             </p>
           </div>
 
