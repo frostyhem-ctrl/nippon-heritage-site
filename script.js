@@ -84,9 +84,9 @@ const translations = {
     "catalog.kicker": "Motos en stock",
     "catalog.title": "Exemples d'arrivages et de modeles suivis.",
     "catalog.body":
-      "Cette maquette reprend l'esprit catalogue de tes references avec un vrai bloc de filtres, des fiches motos et un ton plus premium.",
+      "Cette selection presente des sportives japonaises 2 temps et 4 temps que nous pouvons proposer ou rechercher selon disponibilite.",
     "catalog.resultLabel": "modeles affiches",
-    "catalog.toolbarNote": "Catalogue de presentation dans le style de ta reference.",
+    "catalog.toolbarNote": "Exemples de modeles suivis et regulierement recherches.",
     "filters.searchLabel": "Rechercher",
     "filters.searchPlaceholder": "NSR, TZR, RGV...",
     "filters.brandLabel": "Filtrer par marque",
@@ -116,9 +116,9 @@ const translations = {
     "cards.ns400.body":
       "Une piece plus rare, selectionnee pour renforcer le positionnement heritage de la marque.",
     "search.kicker": "Recherche personnalisee",
-    "search.title": "Une moto precise en tete ? Nous pouvons la rechercher pour toi.",
+    "search.title": "Vous avez un modele precis en tete ? Nous pouvons le rechercher au Japon pour vous.",
     "search.body":
-      "Le formulaire reprend l'esprit de ta reference mais l'adapte a ton activite : recherche ciblee, budget, base saine, motos 2 temps de collection uniquement.",
+      "Indiquez le modele souhaite, votre budget et vos criteres. Nous revenons vers vous avec une recherche ciblee sur des motos coherentes, saines et adaptees a votre projet.",
     "form.subject": "Nouvelle demande depuis Nippon Heritage",
     "form.brandLabel": "Marque",
     "form.brandPlaceholder": "Honda, Yamaha, Suzuki...",
@@ -141,7 +141,7 @@ const translations = {
     "form.phonePlaceholder": "Votre numero",
     "form.messageLabel": "Informations complementaires",
     "form.messagePlaceholder":
-      "Precise la moto recherchee, l'etat souhaite, les couleurs, la tolerance kilometrage ou ton objectif collection.",
+      "Precisez la moto recherchee, l'etat souhaite, les couleurs, la tolerance kilometrage ou votre objectif de collection.",
     "form.submit": "Envoyer la demande",
     "form.helper": "Envoi direct des demandes sur frostyhem@gmail.com.",
     "services.kicker": "Nos services",
@@ -154,20 +154,20 @@ const translations = {
     "services.import.bullet3": "Selection adaptee a une clientele collection",
     "services.workshop.title": "Remise en etat atelier avant mise en vente",
     "services.workshop.body":
-      "Tu ne proposes pas une importation brute. Le site insiste donc sur le controle, la mise au propre, la presentation et la coherence mecanique avant qu'une moto n'arrive dans les mains d'un acheteur.",
+      "Chaque moto fait l'objet d'un controle, d'une remise en etat adaptee et d'une presentation soignee avant sa mise en vente.",
     "services.workshop.bullet1": "Controle visuel et technique a reception",
     "services.workshop.bullet2": "Interventions selon l'etat reel de la machine",
     "services.workshop.bullet3": "Presentation propre et valorisante avant diffusion",
     "services.sale.title": "Vente de motos de collection a forte personnalite",
     "services.sale.body":
-      "Le discours commercial est recentre sur la desirabilite, la confiance et la rarete. C'est plus premium, plus clair et plus proche du niveau de presentation que tu voulais atteindre.",
+      "Nous privilegions une presentation claire, serieuse et documentee, en accord avec le niveau d'exigence attendu sur ce type de motos.",
     "services.sale.bullet1": "Catalogue lisible et plus haut de gamme",
     "services.sale.bullet2": "Recherche personnalisee pour demandes precises",
     "services.sale.bullet3": "Aucune rubrique homologation integree au site",
     "method.kicker": "Atelier & methode",
     "method.title": "Une methode courte, lisible et credible.",
     "method.body":
-      "Le site raconte tres clairement comment une moto arrive jusqu'a la vente, sans promettre de services que tu ne veux pas proposer.",
+      "Notre methode de travail est simple : selectionner, controler, remettre en etat et proposer des motos coherentes a la vente.",
     "method.step1.title": "Reperage",
     "method.step1.body":
       "Veille des modeles suivis, lecture de l'etat reel et tri rigoureux des opportunites.",
@@ -183,7 +183,7 @@ const translations = {
     "contact.kicker": "Contact",
     "contact.title": "Un site pense pour inspirer confiance et convertir.",
     "contact.body":
-      "La base est maintenant beaucoup plus proche de tes captures : noir, orange, hero photo, catalogue, recherche personnalisee et services en blocs. Le formulaire envoie maintenant les demandes directement par email.",
+      "",
     "contact.panel1.title": "Positionnement",
     "contact.panel1.body":
       "Import selectif de motos 2 temps japonaises de collection, remises en etat puis revendues en France.",
@@ -192,10 +192,10 @@ const translations = {
       "Le site met en avant les modeles en stock, la recherche sur commande, l'atelier et le contact.",
     "contact.panel3.title": "Etape suivante",
     "contact.panel3.body":
-      "On pourra ensuite remplacer les exemples par tes vraies motos, tes vrais textes et tes coordonnees.",
+      "",
     "footer.brand": "Nippon Heritage • Import de motos japonaises 2 temps de collection.",
     "footer.visuals": "Visuels gratuits telecharges depuis Unsplash.",
-    "footer.note": "Maquette de lancement orientee conversion.",
+    "footer.note": "",
     "thanks.kicker": "Message envoye",
     "thanks.title": "Merci, votre demande a bien ete transmise.",
     "thanks.body":
@@ -731,11 +731,11 @@ Object.assign(translations.fr, {
   "band.item2": "2 temps & 4 temps",
   "band.item4": "Faible kilométrage privilégié",
   "band.item6": "Sélection rigoureuse",
-  "catalog.title": "Une vitrine mêlant 2 temps iconiques et 4 temps collectors.",
+  "catalog.title": "Quelques modèles représentatifs de notre sélection.",
   "catalog.body":
-    "La sélection d’exemple met maintenant en avant des RVF 400, VFR 400, CBR 400, NSR 250 et RGV 250, avec des visuels de modèles correspondants et un rendu plus crédible pour la vente.",
+    "Cette sélection présente des sportives japonaises 2 temps et 4 temps que nous pouvons proposer ou rechercher selon disponibilité.",
   "catalog.resultLabel": "modèles affichés",
-  "catalog.toolbarNote": "Catalogue de présentation dans un esprit plus premium et plus ciblé.",
+  "catalog.toolbarNote": "Exemples de modèles suivis et régulièrement recherchés.",
   "filters.searchPlaceholder": "RVF 400, NSR 250, VFR 400...",
   "filters.typeLabel": "Filtrer par motorisation",
   "filters.typeAll": "Toutes les motorisations",
@@ -756,9 +756,9 @@ Object.assign(translations.fr, {
   "cards.rgv.body":
     "Une base 2 temps très désirable, nerveuse et légère, idéale pour une vitrine plus racing.",
   "search.kicker": "Recherche personnalisée",
-  "search.title": "Une RVF 400, une NSR 250 ou une RGV 250 en tête ? Nous pouvons la rechercher pour toi.",
+  "search.title": "Vous avez un modèle précis en tête ? Nous pouvons le rechercher au Japon pour vous.",
   "search.body":
-    "Le formulaire reprend l’esprit de ta référence mais l’adapte à ton activité : recherche ciblée, budget, base saine, 2 temps et 4 temps japonais sélectionnés avec cohérence.",
+    "Indiquez le modèle souhaité, votre budget et vos critères. Nous revenons vers vous avec une recherche ciblée sur des motos cohérentes, saines et adaptées à votre projet.",
   "form.modelLabel": "Modèle",
   "form.modelPlaceholder": "RVF400, VFR400, CBR400RR, NSR250, RGV250...",
   "form.typeLabel": "Motorisation",
@@ -773,7 +773,7 @@ Object.assign(translations.fr, {
   "form.phonePlaceholder": "Votre numéro",
   "form.messageLabel": "Informations complémentaires",
   "form.messagePlaceholder":
-    "Précise la moto recherchée, l’état souhaité, les couleurs, la tolérance kilométrage ou ton objectif collection.",
+    "Précisez la moto recherchée, l’état souhaité, les couleurs, la tolérance kilométrage ou votre objectif de collection.",
   "services.title": "Import, sélection, atelier et vente de motos japonaises 2 temps et 4 temps.",
   "services.import.title": "Import sélectif depuis le Japon",
   "services.import.body":
@@ -783,18 +783,18 @@ Object.assign(translations.fr, {
   "services.import.bullet3": "Sélection adaptée à une clientèle collection",
   "services.workshop.title": "Remise en état atelier avant mise en vente",
   "services.workshop.body":
-    "Tu ne proposes pas une importation brute. Le site insiste donc sur le contrôle, la mise au propre, la présentation et la cohérence mécanique avant qu’une moto n’arrive dans les mains d’un acheteur.",
+    "Chaque moto fait l’objet d’un contrôle, d’une remise en état adaptée et d’une présentation soignée avant sa mise en vente.",
   "services.workshop.bullet1": "Contrôle visuel et technique à réception",
   "services.workshop.bullet3": "Présentation propre et valorisante avant diffusion",
   "services.sale.title": "Vente de motos de collection à forte personnalité",
   "services.sale.body":
-    "Le discours commercial est recentré sur la désirabilité, la confiance et la rareté. C’est plus premium, plus clair et plus proche du niveau de présentation que tu voulais atteindre.",
+    "Nous privilégions une présentation claire, sérieuse et documentée, en accord avec le niveau d’exigence attendu sur ce type de motos.",
   "services.sale.bullet2": "Recherche personnalisée pour demandes précises",
   "services.sale.bullet3": "Aucune rubrique homologation intégrée au site",
   "method.kicker": "Atelier & méthode",
   "method.title": "Une méthode courte, lisible et crédible.",
   "method.body":
-    "Le site raconte très clairement comment une moto arrive jusqu’à la vente, sans promettre de services que tu ne veux pas proposer.",
+    "Notre méthode de travail est simple : sélectionner, contrôler, remettre en état et proposer des motos cohérentes à la vente.",
   "method.step1.title": "Repérage",
   "method.step1.body":
     "Veille des modèles suivis, lecture de l’état réel et tri rigoureux des opportunités.",
@@ -804,19 +804,18 @@ Object.assign(translations.fr, {
   "method.step3.title": "Préparation",
   "method.step4.body":
     "Diffusion plus premium, échange direct avec les acheteurs et recherche sur commande.",
-  "contact.title": "Un site pensé pour inspirer confiance et convertir.",
-  "contact.body":
-    "La base est maintenant beaucoup plus proche de tes captures : noir, orange, hero photo, catalogue, recherche personnalisée et services en blocs. Le formulaire envoie maintenant les demandes directement par email.",
+  "contact.title": "",
+  "contact.body": "",
   "contact.panel1.body":
     "Import sélectif de motos japonaises 2 temps et 4 temps de collection, remises en état puis revendues en France.",
   "contact.panel2.body":
-    "Le site met en avant les modèles en stock, la recherche sur commande, l’atelier et le contact.",
+    "Le site met en avant les modèles en stock, la recherche sur commande et l’atelier.",
   "contact.panel3.title": "Étape suivante",
   "contact.panel3.body":
-    "On pourra ensuite remplacer les annonces d’exemple par tes vraies motos, tes vrais textes et tes coordonnées.",
+    "",
   "footer.brand": "Nippon Heritage • Import de motos japonaises 2 temps et 4 temps de collection.",
   "footer.visuals": "Photos de modèles issues de Wikimedia Commons.",
-  "footer.note": "Maquette de lancement orientée conversion.",
+  "footer.note": "",
   "thanks.kicker": "Message envoyé",
   "thanks.title": "Merci, votre demande a bien été transmise.",
   "thanks.body":
