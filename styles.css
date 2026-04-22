@@ -290,7 +290,7 @@ textarea {
   background:
     linear-gradient(180deg, rgba(24, 21, 22, 0.46) 0%, rgba(24, 21, 22, 0.72) 38%, rgba(24, 21, 22, 0.96) 100%),
     linear-gradient(90deg, rgba(20, 16, 17, 0.82) 0%, rgba(20, 16, 17, 0.4) 45%, rgba(20, 16, 17, 0.78) 100%),
-    url("assets/images/hero-showroom.jpg") center 26% / cover no-repeat;
+    url("assets/images/stock/vfr400.jpg") center 38% / cover no-repeat;
 }
 
 .hero-layout {
