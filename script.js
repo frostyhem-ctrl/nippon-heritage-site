@@ -705,6 +705,220 @@ const translations = {
   },
 };
 
+Object.assign(translations.fr, {
+  "meta.home.title": "Nippon Heritage | Import de motos japonaises 2 temps et 4 temps",
+  "meta.home.description":
+    "Nippon Heritage importe du Japon des motos japonaises de collection 2 temps et 4 temps, les remet en état en France et les propose à la vente.",
+  "meta.thanks.title": "Merci | Nippon Heritage",
+  "meta.thanks.description": "Confirmation d’envoi du formulaire Nippon Heritage.",
+  "top.strip": "Import sélectif depuis le Japon • 2 temps & 4 temps • Atelier en France",
+  "aria.quickLinks": "Accès rapides",
+  "common.logoAlt": "Logo Nippon Heritage",
+  "nav.request": "Recherche personnalisée",
+  "hero.kicker": "Nippon Heritage • Sportives japonaises de collection",
+  "hero.title": "Spécialiste de l’import de motos japonaises 2 temps et 4 temps.",
+  "hero.body":
+    "Nous sourçons au Japon des motos saines, peu kilométrées et désirables, puis nous les remettons en état en France avant la revente. Pas d’homologation, pas de volume inutile, uniquement des bases choisies.",
+  "hero.ctaPrimary": "Voir les modèles",
+  "hero.card1.title": "Sélection au Japon",
+  "hero.card1.body":
+    "Nous visons des motos cohérentes, propres et intéressantes pour la collection.",
+  "hero.card2.body":
+    "Contrôle, remise en état et présentation avant la mise en vente en France.",
+  "hero.card3.body":
+    "Import, remise en état, vente. Aucune rubrique homologation n’est proposée.",
+  "band.item1": "Import de sportives japonaises",
+  "band.item2": "2 temps & 4 temps",
+  "band.item4": "Faible kilométrage privilégié",
+  "band.item6": "Sélection rigoureuse",
+  "catalog.title": "Une vitrine mêlant 2 temps iconiques et 4 temps collectors.",
+  "catalog.body":
+    "La sélection d’exemple met maintenant en avant des RVF 400, VFR 400, CBR 400, NSR 250 et RGV 250, avec des visuels de modèles correspondants et un rendu plus crédible pour la vente.",
+  "catalog.resultLabel": "modèles affichés",
+  "catalog.toolbarNote": "Catalogue de présentation dans un esprit plus premium et plus ciblé.",
+  "filters.searchPlaceholder": "RVF 400, NSR 250, VFR 400...",
+  "filters.typeLabel": "Filtrer par motorisation",
+  "filters.typeAll": "Toutes les motorisations",
+  "filters.type2t": "2 temps",
+  "filters.type4t": "4 temps",
+  "filters.sortRecent": "Année récente",
+  "filters.sortPriceDesc": "Prix décroissant",
+  "filters.sortYearAsc": "Année ancienne",
+  "filters.reset": "Réinitialiser les filtres",
+  "cards.rvf.body":
+    "V4 4 temps iconique, très recherché pour son châssis compact et son identité RC45.",
+  "cards.vfr.body":
+    "Une 400 V4 de collection emblématique, parfaite pour une sélection sport japonaise premium.",
+  "cards.cbr.body":
+    "Une 400 quatre cylindres vive et légère, très cohérente pour une offre youngtimer sportive.",
+  "cards.nsr.body":
+    "Une vraie sportive 2 temps de collection, emblématique du marché japonais des années 80-90.",
+  "cards.rgv.body":
+    "Une base 2 temps très désirable, nerveuse et légère, idéale pour une vitrine plus racing.",
+  "search.kicker": "Recherche personnalisée",
+  "search.title": "Une RVF 400, une NSR 250 ou une RGV 250 en tête ? Nous pouvons la rechercher pour toi.",
+  "search.body":
+    "Le formulaire reprend l’esprit de ta référence mais l’adapte à ton activité : recherche ciblée, budget, base saine, 2 temps et 4 temps japonais sélectionnés avec cohérence.",
+  "form.modelLabel": "Modèle",
+  "form.modelPlaceholder": "RVF400, VFR400, CBR400RR, NSR250, RGV250...",
+  "form.typeLabel": "Motorisation",
+  "form.typeDefault": "2 temps, 4 temps...",
+  "form.yearLabel": "Année minimale",
+  "form.yearPlaceholder": "Ex. : 1988",
+  "form.engineLabel": "Cylindrée",
+  "form.enginePlaceholder": "250 cc, 400 cc...",
+  "form.firstnameLabel": "Prénom",
+  "form.firstnamePlaceholder": "Votre prénom",
+  "form.phoneLabel": "Téléphone",
+  "form.phonePlaceholder": "Votre numéro",
+  "form.messageLabel": "Informations complémentaires",
+  "form.messagePlaceholder":
+    "Précise la moto recherchée, l’état souhaité, les couleurs, la tolérance kilométrage ou ton objectif collection.",
+  "services.title": "Import, sélection, atelier et vente de motos japonaises 2 temps et 4 temps.",
+  "services.import.title": "Import sélectif depuis le Japon",
+  "services.import.body":
+    "Le sourcing ne vise pas la quantité. Chaque moto est choisie pour sa cohérence, son état de départ et sa valeur potentielle une fois remise en présentation pour le marché français.",
+  "services.import.bullet1": "Recherche de sportives japonaises 2 temps et 4 temps",
+  "services.import.bullet2": "Priorité aux bases saines et peu kilométrées",
+  "services.import.bullet3": "Sélection adaptée à une clientèle collection",
+  "services.workshop.title": "Remise en état atelier avant mise en vente",
+  "services.workshop.body":
+    "Tu ne proposes pas une importation brute. Le site insiste donc sur le contrôle, la mise au propre, la présentation et la cohérence mécanique avant qu’une moto n’arrive dans les mains d’un acheteur.",
+  "services.workshop.bullet1": "Contrôle visuel et technique à réception",
+  "services.workshop.bullet3": "Présentation propre et valorisante avant diffusion",
+  "services.sale.title": "Vente de motos de collection à forte personnalité",
+  "services.sale.body":
+    "Le discours commercial est recentré sur la désirabilité, la confiance et la rareté. C’est plus premium, plus clair et plus proche du niveau de présentation que tu voulais atteindre.",
+  "services.sale.bullet2": "Recherche personnalisée pour demandes précises",
+  "services.sale.bullet3": "Aucune rubrique homologation intégrée au site",
+  "method.kicker": "Atelier & méthode",
+  "method.title": "Une méthode courte, lisible et crédible.",
+  "method.body":
+    "Le site raconte très clairement comment une moto arrive jusqu’à la vente, sans promettre de services que tu ne veux pas proposer.",
+  "method.step1.title": "Repérage",
+  "method.step1.body":
+    "Veille des modèles suivis, lecture de l’état réel et tri rigoureux des opportunités.",
+  "method.step2.title": "Achat ciblé",
+  "method.step2.body":
+    "Priorité aux motos complètes, désirables et adaptées à une remise en état sérieuse.",
+  "method.step3.title": "Préparation",
+  "method.step4.body":
+    "Diffusion plus premium, échange direct avec les acheteurs et recherche sur commande.",
+  "contact.title": "Un site pensé pour inspirer confiance et convertir.",
+  "contact.body":
+    "La base est maintenant beaucoup plus proche de tes captures : noir, orange, hero photo, catalogue, recherche personnalisée et services en blocs. Le formulaire envoie maintenant les demandes directement par email.",
+  "contact.panel1.body":
+    "Import sélectif de motos japonaises 2 temps et 4 temps de collection, remises en état puis revendues en France.",
+  "contact.panel2.body":
+    "Le site met en avant les modèles en stock, la recherche sur commande, l’atelier et le contact.",
+  "contact.panel3.title": "Étape suivante",
+  "contact.panel3.body":
+    "On pourra ensuite remplacer les annonces d’exemple par tes vraies motos, tes vrais textes et tes coordonnées.",
+  "footer.brand": "Nippon Heritage • Import de motos japonaises 2 temps et 4 temps de collection.",
+  "footer.visuals": "Photos de modèles issues de Wikimedia Commons.",
+  "footer.note": "Maquette de lancement orientée conversion.",
+  "thanks.kicker": "Message envoyé",
+  "thanks.title": "Merci, votre demande a bien été transmise.",
+  "thanks.body":
+    "Nous revenons vers vous sur l’email indiqué dès que possible. Vous pouvez maintenant retourner au site principal.",
+  "thanks.cta": "Revenir à l’accueil",
+});
+
+Object.assign(translations.en, {
+  "meta.home.title": "Nippon Heritage | Japanese 2-stroke and 4-stroke motorcycle imports",
+  "meta.home.description":
+    "Nippon Heritage sources collectible Japanese 2-stroke and 4-stroke motorcycles, refreshes them in France, and offers them for sale.",
+  "top.strip": "Selective import from Japan • 2-stroke & 4-stroke • Workshop in France",
+  "hero.kicker": "Nippon Heritage • Collectible Japanese sport bikes",
+  "hero.title": "Specialist in imported Japanese 2-stroke and 4-stroke motorcycles.",
+  "hero.body":
+    "We source sound, low-mileage and desirable motorcycles in Japan, then refresh them in France before resale. No homologation, no unnecessary volume, only carefully chosen bikes.",
+  "band.item1": "Import of Japanese sport bikes",
+  "band.item2": "2-stroke & 4-stroke",
+  "catalog.title": "A showcase mixing iconic 2-strokes and collectible 4-strokes.",
+  "catalog.body":
+    "The sample selection now highlights RVF 400, VFR 400, CBR 400, NSR 250 and RGV 250 models with matching visuals and a more credible sales presentation.",
+  "catalog.toolbarNote": "Presentation catalog with a sharper and more premium focus.",
+  "filters.searchPlaceholder": "RVF 400, NSR 250, VFR 400...",
+  "filters.typeLabel": "Filter by engine type",
+  "filters.typeAll": "All engine types",
+  "filters.type2t": "2-stroke",
+  "filters.type4t": "4-stroke",
+  "cards.rvf.body":
+    "An iconic 4-stroke V4, highly desirable for its compact chassis and RC45-inspired character.",
+  "cards.vfr.body":
+    "A landmark 400cc V4 collector bike, perfect for a premium Japanese sport selection.",
+  "cards.cbr.body":
+    "A sharp and lightweight inline-four 400, ideal for a youngtimer sport offering.",
+  "cards.nsr.body":
+    "A true collectible 2-stroke sport bike, emblematic of the Japanese market of the late 80s and 90s.",
+  "cards.rgv.body":
+    "A highly desirable 2-stroke base, light and punchy, ideal for a more racing-focused showcase.",
+  "search.title": "Have an RVF 400, NSR 250 or RGV 250 in mind? We can source it for you.",
+  "search.body":
+    "The form keeps the spirit of your reference while adapting it to your business: targeted sourcing, budget, healthy base, and coherent Japanese 2-stroke and 4-stroke selection.",
+  "form.modelPlaceholder": "RVF400, VFR400, CBR400RR, NSR250, RGV250...",
+  "form.typeLabel": "Engine type",
+  "form.typeDefault": "2-stroke, 4-stroke...",
+  "form.yearPlaceholder": "Ex.: 1988",
+  "services.title": "Import, selection, workshop preparation and sale of Japanese 2-stroke and 4-stroke motorcycles.",
+  "services.import.bullet1": "Search for collectible Japanese 2-stroke and 4-stroke sport bikes",
+  "contact.panel1.body":
+    "Selective import of collectible Japanese 2-stroke and 4-stroke motorcycles, refreshed and then resold in France.",
+  "footer.brand": "Nippon Heritage • Import of collectible Japanese 2-stroke and 4-stroke motorcycles.",
+  "footer.visuals": "Model photos sourced from Wikimedia Commons.",
+});
+
+Object.assign(translations.es, {
+  "meta.home.title": "Nippon Heritage | Importación de motos japonesas 2 tiempos y 4 tiempos",
+  "meta.home.description":
+    "Nippon Heritage selecciona en Japón motos japonesas de colección 2 tiempos y 4 tiempos, las pone al día en Francia y luego las ofrece a la venta.",
+  "top.strip": "Importación selectiva desde Japón • 2 tiempos y 4 tiempos • Taller en Francia",
+  "hero.title": "Especialista en importación de motos japonesas 2 tiempos y 4 tiempos.",
+  "band.item2": "2 tiempos y 4 tiempos",
+  "filters.typeLabel": "Filtrar por motor",
+  "filters.typeAll": "Todos los motores",
+  "filters.type2t": "2 tiempos",
+  "filters.type4t": "4 tiempos",
+  "cards.rvf.body":
+    "Una V4 de 4 tiempos icónica, muy buscada por su chasis compacto y su carácter inspirado en la RC45.",
+  "cards.vfr.body":
+    "Una 400 V4 de colección emblemática, perfecta para una selección sport japonesa premium.",
+  "cards.cbr.body":
+    "Una 400 de cuatro cilindros viva y ligera, ideal para una oferta youngtimer deportiva.",
+  "search.title": "¿Tienes una RVF 400, una NSR 250 o una RGV 250 en mente? Podemos buscarla por ti.",
+  "form.typeLabel": "Motorización",
+  "form.typeDefault": "2 tiempos, 4 tiempos...",
+  "services.title": "Importación, selección, taller y venta de motos japonesas 2 tiempos y 4 tiempos.",
+  "footer.brand": "Nippon Heritage • Importación de motos japonesas 2 tiempos y 4 tiempos de colección.",
+  "footer.visuals": "Fotos de modelos procedentes de Wikimedia Commons.",
+});
+
+Object.assign(translations.it, {
+  "meta.home.title": "Nippon Heritage | Importazione di moto giapponesi 2 tempi e 4 tempi",
+  "meta.home.description":
+    "Nippon Heritage seleziona in Giappone moto giapponesi da collezione 2 tempi e 4 tempi, le rimette in ordine in Francia e poi le propone in vendita.",
+  "top.strip": "Import selettivo dal Giappone • 2 tempi e 4 tempi • Officina in Francia",
+  "hero.title": "Specialista nell'importazione di moto giapponesi 2 tempi e 4 tempi.",
+  "band.item2": "2 tempi e 4 tempi",
+  "filters.typeLabel": "Filtra per motore",
+  "filters.typeAll": "Tutte le motorizzazioni",
+  "filters.type2t": "2 tempi",
+  "filters.type4t": "4 tempi",
+  "cards.rvf.body":
+    "Una V4 4 tempi iconica, molto ricercata per il suo telaio compatto e il carattere ispirato alla RC45.",
+  "cards.vfr.body":
+    "Una 400 V4 da collezione emblematica, perfetta per una selezione sportiva giapponese premium.",
+  "cards.cbr.body":
+    "Una 400 quattro cilindri vivace e leggera, ideale per un'offerta youngtimer sportiva.",
+  "search.title": "Hai in mente una RVF 400, una NSR 250 o una RGV 250? Possiamo cercarla per te.",
+  "form.typeLabel": "Motorizzazione",
+  "form.typeDefault": "2 tempi, 4 tempi...",
+  "services.title": "Importazione, selezione, officina e vendita di moto giapponesi 2 tempi e 4 tempi.",
+  "footer.brand": "Nippon Heritage • Importazione di moto giapponesi 2 tempi e 4 tempi da collezione.",
+  "footer.visuals": "Foto dei modelli da Wikimedia Commons.",
+});
+
 const supportedLanguages = Object.keys(translations);
 let currentLanguage = defaultLanguage;
 
