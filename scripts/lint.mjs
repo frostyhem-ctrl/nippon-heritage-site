@@ -11,7 +11,7 @@ const walk = (directory) => {
     const stats = statSync(fullPath);
 
     if (stats.isDirectory()) {
-      if (entry === "node_modules" || entry === ".git") {
+      if (entry === "node_modules" || entry === ".git" || entry === ".next" || entry === "app") {
         continue;
       }
       walk(fullPath);

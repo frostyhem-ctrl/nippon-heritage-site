@@ -2,12 +2,16 @@
   "name": "nippon-heritage-site",
   "private": true,
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "node scripts/lint.mjs",
-    "build": "node scripts/build-check.mjs",
-    "dev": "npx serve . -l 3000",
     "dev:vercel": "vercel dev --listen 3001"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.0.0"
+    "@supabase/supabase-js": "^2.0.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }
