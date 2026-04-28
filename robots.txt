@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /admin/
+Disallow: /api/
+Disallow: /login
+Disallow: /dashboard
+
+Sitemap: https://www.nipponheritage.fr/sitemap.xml

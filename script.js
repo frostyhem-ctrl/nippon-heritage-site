@@ -6,10 +6,18 @@ const nav = document.querySelector(".site-nav");
 const siteHeader = document.querySelector(".site-header");
 const languageButtons = Array.from(document.querySelectorAll(".lang-switch [data-lang]"));
 const metaDescription = document.querySelector('meta[name="description"]');
+const canonicalLink = document.querySelector('link[rel="canonical"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogDescription = document.querySelector('meta[property="og:description"]');
+const ogUrl = document.querySelector('meta[property="og:url"]');
+const ogLocale = document.querySelector('meta[property="og:locale"]');
+const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+const googleVerificationMeta = document.querySelector('meta[data-google-site-verification]');
 const homeLinks = Array.from(document.querySelectorAll("[data-home-link]"));
 
 const stockGrid = document.getElementById("stock-grid");
-const stockCards = Array.from(document.querySelectorAll(".stock-card"));
+let stockCards = Array.from(document.querySelectorAll(".stock-card"));
 const stockCount = document.getElementById("stock-count");
 const stockSearch = document.getElementById("stock-search");
 const brandFilter = document.getElementById("brand-filter");
@@ -26,6 +34,7 @@ const formNext = document.getElementById("form-next");
 const formUrl = document.getElementById("form-url");
 
 const defaultLanguage = "fr";
+const defaultSiteUrl = "https://www.nipponheritage.fr";
 const storageKey = "nipponHeritageLanguage";
 const localeMap = {
   fr: "fr-FR",
@@ -706,10 +715,10 @@ const translations = {
 };
 
 Object.assign(translations.fr, {
-  "meta.home.title": "Nippon Heritage | Import de motos japonaises 2 temps et 4 temps",
+  "meta.home.title": "Nippon Heritage | Import moto Japon, motos japonaises de collection et sportives 2 temps",
   "meta.home.description":
     "Nippon Heritage importe du Japon des motos japonaises de collection 2 temps et 4 temps, les remet en état en France et les propose à la vente.",
-  "meta.thanks.title": "Merci | Nippon Heritage",
+  "meta.thanks.title": "Merci | Demande envoyee a Nippon Heritage",
   "meta.thanks.description": "Confirmation d’envoi du formulaire Nippon Heritage.",
   "top.strip": "Import sélectif depuis le Japon • 2 temps & 4 temps • Atelier en France",
   "aria.quickLinks": "Accès rapides",
@@ -918,8 +927,188 @@ Object.assign(translations.it, {
   "footer.visuals": "Foto dei modelli da Wikimedia Commons.",
 });
 
+Object.assign(translations.fr, {
+  "meta.home.title": "Nippon Heritage | Import moto Japon, motos japonaises de collection et sportives 2 temps",
+  "meta.home.description":
+    "Nippon Heritage est specialise dans l'import moto Japon et la selection de motos japonaises de collection, sportives 2 temps et 4 temps, rares JDM et restaurees en France.",
+  "meta.thanks.title": "Merci | Demande envoyee a Nippon Heritage",
+  "meta.thanks.description": "Confirmation d'envoi de votre demande a Nippon Heritage.",
+});
+
+Object.assign(translations.en, {
+  "meta.home.title": "Nippon Heritage | Japan motorcycle imports and collectible JDM sport bikes",
+  "meta.home.description":
+    "Nippon Heritage sources collectible Japanese motorcycles from Japan, including rare JDM two-strokes and four-strokes, then refreshes them in France before sale.",
+  "meta.thanks.title": "Thank you | Request sent to Nippon Heritage",
+  "meta.thanks.description": "Your request has been sent to Nippon Heritage.",
+});
+
+Object.assign(translations.es, {
+  "meta.home.title": "Nippon Heritage | Importacion de motos japonesas y deportivas JDM de coleccion",
+  "meta.home.description":
+    "Nippon Heritage selecciona en Japon motos japonesas de coleccion, 2 tiempos y 4 tiempos, y las prepara en Francia antes de venderlas.",
+  "meta.thanks.title": "Gracias | Solicitud enviada a Nippon Heritage",
+  "meta.thanks.description": "Su solicitud ha sido enviada a Nippon Heritage.",
+});
+
+Object.assign(translations.it, {
+  "meta.home.title": "Nippon Heritage | Importazione di moto giapponesi e sportive JDM da collezione",
+  "meta.home.description":
+    "Nippon Heritage seleziona in Giappone moto giapponesi da collezione, 2 tempi e 4 tempi, e le prepara in Francia prima della vendita.",
+  "meta.thanks.title": "Grazie | Richiesta inviata a Nippon Heritage",
+  "meta.thanks.description": "La richiesta e stata inviata a Nippon Heritage.",
+});
+
 const supportedLanguages = Object.keys(translations);
 let currentLanguage = defaultLanguage;
+let runtimeConfig = {
+  siteUrl: defaultSiteUrl,
+  googleSiteVerification: "",
+};
+
+const getSiteUrl = () => (runtimeConfig.siteUrl || defaultSiteUrl).replace(/\/+$/, "");
+const getPagePath = () => (page === "thanks" ? "/merci.html" : "/");
+const getPublicUrl = (language = currentLanguage, includeLanguageParam = true) => {
+  const url = new URL(getPagePath(), `${getSiteUrl()}/`);
+  if (includeLanguageParam && language && language !== defaultLanguage) {
+    url.searchParams.set("lang", language);
+  }
+  return url.toString();
+};
+
+const escapeHtml = (value = "") =>
+  String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
+const normalizeEngineType = (value = "") => {
+  const normalized = String(value || "").trim().toLowerCase();
+  if (normalized.startsWith("2")) {
+    return { filterValue: "2t", badge: "2T" };
+  }
+  if (normalized.startsWith("4")) {
+    return { filterValue: "4t", badge: "4T" };
+  }
+  return {
+    filterValue: normalized || "all",
+    badge: normalized ? String(value).toUpperCase() : "-",
+  };
+};
+
+const buildStockSearchText = (item, engine) =>
+  [
+    item.title,
+    item.brand,
+    item.model,
+    item.slug,
+    item.year,
+    item.displacement,
+    item.origin_country,
+    engine.filterValue,
+    engine.badge,
+    "japon",
+    "japan",
+    "jdm",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+const buildStockCardMarkup = (item) => {
+  const engine = normalizeEngineType(item.engine_type);
+  const country = escapeHtml(item.origin_country || translate("common.japan"));
+  const title = escapeHtml(item.title || "Moto Nippon Heritage");
+  const description = escapeHtml(
+    item.description || "Moto japonaise de collection selectionnee par Nippon Heritage."
+  );
+  const image = escapeHtml(item.images?.[0] || "assets/images/stock/vfr400.jpg");
+  const price = Number(item.price || 0);
+  const yearValue = Number(item.year || 0);
+  const displacement = escapeHtml(item.displacement || "-");
+  const brand = escapeHtml(item.brand || "");
+  const searchText = escapeHtml(buildStockSearchText(item, engine));
+
+  return `
+    <article
+      class="stock-card"
+      data-brand="${brand}"
+      data-type="${engine.filterValue}"
+      data-price="${price}"
+      data-year="${yearValue}"
+      data-search="${searchText}"
+    >
+      <img src="${image}" alt="${title}" width="1280" height="960" loading="lazy" decoding="async" />
+      <div class="stock-card-body">
+        <div class="stock-badges">
+          <span>${yearValue || "-"}</span>
+          <span>${displacement}</span>
+          <span>${engine.badge}</span>
+          <span>${country}</span>
+        </div>
+        <h3>${title}</h3>
+        <p>${description}</p>
+        <div class="stock-footer">
+          <strong>${formatCurrency(price)}</strong>
+          <a href="#commande" data-i18n="common.viewMore">${translate("common.viewMore")}</a>
+        </div>
+      </div>
+    </article>
+  `;
+};
+
+const renderRemoteStock = (items) => {
+  if (!stockGrid || !Array.isArray(items) || !items.length) return;
+
+  stockGrid.innerHTML = items.map((item) => buildStockCardMarkup(item)).join("");
+  stockCards = Array.from(stockGrid.querySelectorAll(".stock-card"));
+  updateTranslatedText();
+  syncBrandFilterOptions();
+  updateStockPrices();
+  applyStockFilters();
+};
+
+const loadRuntimeConfig = async () => {
+  try {
+    const response = await fetch("/api/public/config", {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) return;
+
+    const config = await response.json();
+    runtimeConfig = {
+      ...runtimeConfig,
+      ...config,
+      siteUrl: config.siteUrl || runtimeConfig.siteUrl,
+      googleSiteVerification: config.googleSiteVerification || "",
+    };
+
+    updateMeta();
+  } catch {}
+};
+
+const loadPublishedMotorcycles = async () => {
+  if (page !== "home" || !stockGrid) return;
+
+  try {
+    const response = await fetch("/api/public/motorcycles", {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) return;
+
+    const payload = await response.json();
+    if (Array.isArray(payload.items) && payload.items.length) {
+      renderRemoteStock(payload.items);
+    }
+  } catch {}
+};
 
 const translate = (key) =>
   translations[currentLanguage]?.[key] ?? translations[defaultLanguage]?.[key] ?? key;
@@ -989,9 +1178,37 @@ const syncLanguageInUrl = () => {
 };
 
 const updateMeta = () => {
-  document.title = translate(`meta.${page}.title`);
+  const title = translate(`meta.${page}.title`);
+  const description = translate(`meta.${page}.description`);
+  const locale = (localeMap[currentLanguage] || localeMap[defaultLanguage] || "fr-FR").replace("-", "_");
+
+  document.title = title;
   if (metaDescription) {
-    metaDescription.setAttribute("content", translate(`meta.${page}.description`));
+    metaDescription.setAttribute("content", description);
+  }
+  if (canonicalLink) {
+    canonicalLink.setAttribute("href", getPublicUrl(defaultLanguage, false));
+  }
+  if (ogTitle) {
+    ogTitle.setAttribute("content", title);
+  }
+  if (ogDescription) {
+    ogDescription.setAttribute("content", description);
+  }
+  if (ogUrl) {
+    ogUrl.setAttribute("content", getPublicUrl(currentLanguage, true));
+  }
+  if (ogLocale) {
+    ogLocale.setAttribute("content", locale);
+  }
+  if (twitterTitle) {
+    twitterTitle.setAttribute("content", title);
+  }
+  if (twitterDescription) {
+    twitterDescription.setAttribute("content", description);
+  }
+  if (googleVerificationMeta && runtimeConfig.googleSiteVerification) {
+    googleVerificationMeta.setAttribute("content", runtimeConfig.googleSiteVerification);
   }
 };
 
@@ -1017,6 +1234,35 @@ const updateTranslatedText = () => {
   document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
     element.setAttribute("aria-label", translate(element.dataset.i18nAriaLabel));
   });
+};
+
+const syncBrandFilterOptions = () => {
+  if (!brandFilter) return;
+
+  const selectedValue = brandFilter.value || "all";
+  const availableBrands = Array.from(
+    new Set(
+      stockCards
+        .map((card) => (card.dataset.brand || "").trim())
+        .filter(Boolean)
+    )
+  ).sort((left, right) => left.localeCompare(right, localeMap[currentLanguage] || "fr-FR"));
+
+  brandFilter.innerHTML = "";
+
+  const allOption = document.createElement("option");
+  allOption.value = "all";
+  allOption.textContent = translate("filters.brandAll");
+  brandFilter.appendChild(allOption);
+
+  availableBrands.forEach((brand) => {
+    const option = document.createElement("option");
+    option.value = brand;
+    option.textContent = brand;
+    brandFilter.appendChild(option);
+  });
+
+  brandFilter.value = availableBrands.includes(selectedValue) || selectedValue === "all" ? selectedValue : "all";
 };
 
 const updateStockPrices = () => {
@@ -1135,6 +1381,7 @@ const setLanguage = (language) => {
   syncLanguageButtons();
   syncLanguageInUrl();
   updateTranslatedText();
+  syncBrandFilterOptions();
   updateMeta();
   updateStockPrices();
   updateBudgetOutput();
@@ -1198,3 +1445,5 @@ languageButtons.forEach((button) => {
 });
 
 setLanguage(getInitialLanguage());
+loadRuntimeConfig();
+loadPublishedMotorcycles();

@@ -1,0 +1,13 @@
+{
+  "name": "nippon-heritage-site",
+  "private": true,
+  "scripts": {
+    "lint": "node scripts/lint.mjs",
+    "build": "node scripts/build-check.mjs",
+    "dev": "npx serve . -l 3000",
+    "dev:vercel": "vercel dev --listen 3001"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  }
+}
