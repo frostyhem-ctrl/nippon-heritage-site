@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Nippon Heritage</title>
+    <meta name="description" content="Espace d'administration prive Nippon Heritage." />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta name="theme-color" content="#171314" />
+    <link rel="canonical" href="https://www.nipponheritage.fr/admin" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/admin/admin.css" />
+  </head>
+  <body class="admin-shell" data-state="loading">
+    <header class="admin-topbar">
+      <div class="admin-brand">
+        <img src="/assets/images/nippon-heritage-logo.png" alt="Logo Nippon Heritage" />
+        <div>
+          <strong>Nippon Heritage</strong>
+          <span>Administration securisee</span>
+        </div>
+      </div>
+      <button type="button" class="admin-secondary" id="logout-button">Deconnexion</button>
+    </header>
+
+    <main class="admin-app">
+      <div class="admin-grid">
+        <section class="admin-card">
+          <h1>Gestion des motos</h1>
+          <p class="admin-subtle">
+            Creez, modifiez ou archivez les motos disponibles sans toucher a la mise en page publique.
+          </p>
+
+          <div class="admin-message" id="admin-message" aria-live="polite"></div>
+
+          <form id="motorcycle-form" class="admin-stack">
+            <input type="hidden" id="motorcycle-id" />
+            <div class="admin-field">
+              <span>Titre *</span>
+              <input id="motorcycle-title" name="title" type="text" required />
+            </div>
+            <div class="admin-row">
+              <label class="admin-field">
+                <span>Marque</span>
+                <input id="motorcycle-brand" name="brand" type="text" />
+              </label>
+              <label class="admin-field">
+                <span>Modele</span>
+                <input id="motorcycle-model" name="model" type="text" />
+              </label>
+            </div>
+            <div class="admin-row">
+              <label class="admin-field">
+                <span>Annee</span>
+                <input id="motorcycle-year" name="year" type="number" min="1950" max="2099" />
+              </label>
+              <label class="admin-field">
+                <span>Cylindree</span>
+                <input id="motorcycle-displacement" name="displacement" type="text" placeholder="250 cc" />
+              </label>
+            </div>
+            <div class="admin-row">
+              <label class="admin-field">
+                <span>Type moteur</span>
+                <select id="motorcycle-engine-type" name="engine_type">
+                  <option value="">Selectionner</option>
+                  <option value="2t">2 temps</option>
+                  <option value="4t">4 temps</option>
+                </select>
+              </label>
+              <label class="admin-field">
+                <span>Origine</span>
+                <input id="motorcycle-origin" name="origin_country" type="text" placeholder="Japon" />
+              </label>
+            </div>
+            <div class="admin-row">
+              <label class="admin-field">
+                <span>Kilometrage</span>
+                <input id="motorcycle-mileage" name="mileage" type="number" min="0" step="1" />
+              </label>
+              <label class="admin-field">
+                <span>Prix</span>
+                <input id="motorcycle-price" name="price" type="number" min="0" step="1" />
+              </label>
+            </div>
+            <div class="admin-row">
+              <label class="admin-field">
+                <span>Statut</span>
+                <select id="motorcycle-status" name="status">
+                  <option value="draft">Brouillon</option>
+                  <option value="published">Publie</option>
+                  <option value="sold">Vendu</option>
+                </select>
+              </label>
+              <label class="admin-field">
+                <span>Slug</span>
+                <input id="motorcycle-slug" name="slug" type="text" placeholder="honda-rvf400r-nc35" />
+              </label>
+            </div>
+            <label class="admin-field">
+              <span>Description</span>
+              <textarea id="motorcycle-description" name="description"></textarea>
+            </label>
+            <label class="admin-field">
+              <span>Images</span>
+              <textarea
+                id="motorcycle-images"
+                name="images"
+                placeholder="Une URL d'image par ligne"
+              ></textarea>
+            </label>
+            <div class="admin-actions">
+              <button type="submit" class="admin-button" id="save-button">Enregistrer</button>
+              <button type="button" class="admin-secondary" id="new-button">Nouvelle fiche</button>
+              <button type="button" class="admin-secondary" id="delete-button">Supprimer</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="admin-card">
+          <h2>Catalogue</h2>
+          <p class="admin-subtle">Les motos publiees alimentent automatiquement la section publique si Supabase est configure.</p>
+          <div class="admin-meta" id="admin-meta"></div>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Titre</th>
+                  <th>Statut</th>
+                  <th>Prix</th>
+                  <th>Mise a jour</th>
+                </tr>
+              </thead>
+              <tbody id="motorcycles-table-body">
+                <tr>
+                  <td colspan="5" class="admin-empty">Chargement...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="/admin/admin.js"></script>
+  </body>
+</html>
