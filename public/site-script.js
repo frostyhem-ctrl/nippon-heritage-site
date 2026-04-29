@@ -1319,6 +1319,9 @@ const getPagePath = () => {
   if (page === "workshopPage") return "/atelier-restauration";
   if (page === "about") return "/a-propos";
   if (page === "contactPage") return "/contact";
+  if (page === "legalMentions") return "/mentions-legales";
+  if (page === "legalPrivacy") return "/politique-confidentialite";
+  if (page === "legalCookies") return "/politique-cookies";
   return "/";
 };
 const getPublicUrl = (language = currentLanguage, includeLanguageParam = true) => {
@@ -1417,7 +1420,9 @@ const renderRemoteStock = (items) => {
 
   stockGrid.innerHTML = items.map((item) => buildStockCardMarkup(item)).join("");
   stockCards = Array.from(stockGrid.querySelectorAll(".stock-card"));
-  updateTranslatedText();
+  if (currentLanguage !== defaultLanguage) {
+    updateTranslatedText();
+  }
   syncBrandFilterOptions();
   updateStockPrices();
   applyStockFilters();
@@ -1532,6 +1537,13 @@ const syncLanguageInUrl = () => {
 };
 
 const updateMeta = () => {
+  if (currentLanguage === defaultLanguage) {
+    if (googleVerificationMeta && runtimeConfig.googleSiteVerification) {
+      googleVerificationMeta.setAttribute("content", runtimeConfig.googleSiteVerification);
+    }
+    return;
+  }
+
   const titleKey = `meta.${page}.title`;
   const descriptionKey = `meta.${page}.description`;
   const hasPageMeta = Boolean(
@@ -1740,8 +1752,26 @@ const resetStockFilters = () => {
   applyStockFilters();
 };
 
-const setLanguage = (language) => {
+const setLanguage = (language, options = {}) => {
+  const { initial = false } = options;
   if (!supportedLanguages.includes(language)) return;
+
+  if (language === defaultLanguage) {
+    currentLanguage = language;
+    setStoredLanguage(language);
+    syncLanguageButtons();
+    syncLanguageInUrl();
+    updateBudgetOutput();
+    updateSearchBudget();
+    updateFormRouting();
+    updateHomeLinks();
+    applyStockFilters();
+
+    if (!initial && document.documentElement.lang !== defaultLanguage) {
+      window.location.assign(getPublicUrl(defaultLanguage, false));
+    }
+    return;
+  }
 
   currentLanguage = language;
   setStoredLanguage(language);
@@ -1811,6 +1841,6 @@ languageButtons.forEach((button) => {
   });
 });
 
-setLanguage(getInitialLanguage());
+setLanguage(getInitialLanguage(), { initial: true });
 loadRuntimeConfig();
 loadPublishedMotorcycles();

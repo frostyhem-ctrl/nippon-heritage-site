@@ -14,6 +14,9 @@ export default async function sitemap() {
     "/services",
     "/atelier-restauration",
     "/contact",
+    "/mentions-legales",
+    "/politique-confidentialite",
+    "/politique-cookies",
   ];
 
   return [

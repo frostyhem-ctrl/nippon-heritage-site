@@ -55,6 +55,13 @@ const navigationCards = [
   },
 ];
 
+const accessBarLinks = [
+  { href: "/motos-disponibles", key: "home.nav.stock.title", label: "Motos disponibles" },
+  { href: "/recherche-personnalisee", key: "home.nav.request.title", label: "Recherche personnalisée" },
+  { href: "/services", key: "home.nav.services.title", label: "Services" },
+  { href: "/contact", key: "home.nav.contact.title", label: "Contact" },
+];
+
 export async function generateMetadata({ searchParams }) {
   const language = await resolveLanguageAsync(searchParams);
   const meta = getLocalizedMeta("home", language);
@@ -98,55 +105,63 @@ export default function HomePage() {
 
       <PublicShell activePath="/" showRail={false}>
         <main className="home-page">
-          <section className="home-landing">
-            <div className="home-landing-backdrop"></div>
-            <div className="home-landing-glow home-landing-glow-left"></div>
-            <div className="home-landing-glow home-landing-glow-right"></div>
-            <div className="container home-landing-layout">
-              <div className="home-landing-copy home-surface">
-                <p className="kicker" data-i18n="hero.kicker">
-                  Nippon Heritage • Sportives japonaises de collection
-                </p>
-                <img
-                  className="home-landing-logo"
-                  src="/assets/images/nippon-heritage-logo.png"
-                  alt="Logo Nippon Heritage"
-                  data-i18n-alt="common.logoAlt"
-                  width="1285"
-                  height="637"
-                  decoding="async"
-                />
-                <h1 data-i18n="hero.title">Motos japonaises rares, sélectionnées avec exigence.</h1>
-                <div className="accent-line" aria-hidden="true"></div>
-                <p className="hero-text" data-i18n="hero.body">
-                  Nippon Heritage sélectionne, importe et valorise des motos japonaises anciennes, rares et emblématiques.
-                </p>
-                <div className="hero-actions">
-                  <a className="button button-primary" href="#en-savoir-plus" data-i18n="hero.ctaPrimary">
-                    En savoir plus
-                  </a>
-                  <a className="button button-secondary" href="/motos-disponibles" data-i18n="hero.ctaSecondary">
-                    Voir les motos
-                  </a>
-                </div>
-              </div>
+          <section className="home-stage">
+            <div className="container home-stage-layout">
+              <div className="home-stage-panel home-surface">
+                <div className="home-stage-copy">
+                  <p className="kicker" data-i18n="hero.kicker">
+                    Nippon Heritage • Sportives japonaises de collection
+                  </p>
+                  <img
+                    className="home-stage-logo"
+                    src="/assets/images/nippon-heritage-logo.png"
+                    alt="Logo Nippon Heritage"
+                    data-i18n-alt="common.logoAlt"
+                    width="1285"
+                    height="637"
+                    decoding="async"
+                  />
+                  <h1 data-i18n="hero.title">Motos japonaises rares, sélectionnées avec exigence.</h1>
+                  <div className="accent-line" aria-hidden="true"></div>
+                  <p className="hero-text" data-i18n="hero.body">
+                    Nippon Heritage sélectionne, importe et valorise des motos japonaises anciennes, rares et emblématiques.
+                  </p>
 
-              <div className="home-landing-stack">
-                <article className="home-depth-card">
-                  <span>01</span>
-                  <strong data-i18n="hero.card1.title">Sélection au Japon</strong>
-                  <p data-i18n="hero.card1.body">Nous visons des motos cohérentes, propres et intéressantes pour la collection.</p>
-                </article>
-                <article className="home-depth-card">
-                  <span>02</span>
-                  <strong data-i18n="hero.card2.title">Passage atelier</strong>
-                  <p data-i18n="hero.card2.body">Contrôle, remise en état et présentation avant la mise en vente en France.</p>
-                </article>
-                <article className="home-depth-card">
-                  <span>03</span>
-                  <strong data-i18n="hero.card3.title">Positionnement clair</strong>
-                  <p data-i18n="hero.card3.body">Import, remise en état, vente. Aucune rubrique homologation n’est proposée.</p>
-                </article>
+                  <div className="hero-actions">
+                    <a className="button button-primary" href="#en-savoir-plus" data-i18n="hero.ctaPrimary">
+                      En savoir plus
+                    </a>
+                    <a className="button button-secondary" href="/motos-disponibles" data-i18n="hero.ctaSecondary">
+                      Voir les motos
+                    </a>
+                  </div>
+                </div>
+
+                <nav className="home-access-bar" aria-label="Accès essentiels">
+                  {accessBarLinks.map((link) => (
+                    <a key={link.href} href={link.href} data-i18n={link.key}>
+                      {link.label}
+                    </a>
+                  ))}
+                </nav>
+
+                <div className="home-depth-grid">
+                  <article className="home-depth-card">
+                    <span>01</span>
+                    <strong data-i18n="hero.card1.title">Sélection au Japon</strong>
+                    <p data-i18n="hero.card1.body">Nous visons des motos cohérentes, propres et intéressantes pour la collection.</p>
+                  </article>
+                  <article className="home-depth-card">
+                    <span>02</span>
+                    <strong data-i18n="hero.card2.title">Passage atelier</strong>
+                    <p data-i18n="hero.card2.body">Contrôle, remise en état et présentation avant la mise en vente en France.</p>
+                  </article>
+                  <article className="home-depth-card">
+                    <span>03</span>
+                    <strong data-i18n="hero.card3.title">Positionnement clair</strong>
+                    <p data-i18n="hero.card3.body">Import, remise en état, vente. Aucune rubrique homologation n’est proposée.</p>
+                  </article>
+                </div>
               </div>
             </div>
           </section>
