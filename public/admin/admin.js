@@ -66,8 +66,8 @@
 
     [
       `Compte : ${profile.email || "-"}`,
-      `Role : ${profile.role || "admin"}`,
-      "Acces : prive",
+      `Rôle : ${profile.role || "admin"}`,
+      "Accès : privé",
     ].forEach((text) => {
       const chip = document.createElement("span");
       chip.textContent = text;
@@ -106,7 +106,7 @@
     if (!tableBody) return;
 
     if (!motorcycles.length) {
-      tableBody.innerHTML = '<tr><td colspan="5" class="admin-empty">Aucune moto trouvee.</td></tr>';
+      tableBody.innerHTML = '<tr><td colspan="5" class="admin-empty">Aucune moto trouvée.</td></tr>';
       return;
     }
 
@@ -159,7 +159,7 @@
     if (response.status === 401 || response.status === 403) {
       await supabaseClient.auth.signOut();
       window.location.replace("/admin/login");
-      throw new Error("Acces admin refuse.");
+      throw new Error("Accès admin refusé.");
     }
 
     return response;
@@ -169,7 +169,7 @@
     const response = await apiFetch("/api/admin/me", { method: "GET" });
     const payload = await response.json();
     if (!response.ok) {
-      throw new Error(payload.error || "Impossible de verifier le role admin.");
+      throw new Error(payload.error || "Impossible de vérifier le rôle admin.");
     }
     fillMeta(payload.profile || {});
   };
@@ -215,10 +215,10 @@
     const result = await response.json();
 
     if (!response.ok) {
-      throw new Error(result.error || "La sauvegarde a echoue.");
+      throw new Error(result.error || "La sauvegarde a échoué.");
     }
 
-    setMessage("Moto enregistree avec succes.", "success");
+    setMessage("Moto enregistrée avec succès.", "success");
     await loadMotorcycles();
     const updated = motorcycles.find((item) => item.id === result.item.id);
     if (updated) fillForm(updated);
@@ -227,7 +227,7 @@
   const handleDelete = async () => {
     const id = selectedId();
     if (!id) {
-      setMessage("Selectionnez d'abord une moto a supprimer.", "error");
+      setMessage("Sélectionnez d'abord une moto à supprimer.", "error");
       return;
     }
 
@@ -244,12 +244,12 @@
     const result = await response.json();
 
     if (!response.ok) {
-      throw new Error(result.error || "La suppression a echoue.");
+      throw new Error(result.error || "La suppression a échoué.");
     }
 
     emptyForm();
     await loadMotorcycles();
-    setMessage("Moto supprimee.", "success");
+    setMessage("Moto supprimée.", "success");
   };
 
   const bootstrap = async () => {
@@ -290,7 +290,7 @@
 
       body.dataset.state = "ready";
     } catch (error) {
-      setMessage(error.message || "Impossible de charger l'administration.", "error");
+      setMessage(error.message || "Impossible de charger l’administration.", "error");
       body.dataset.state = "ready";
     }
   };

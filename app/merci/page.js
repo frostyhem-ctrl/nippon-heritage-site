@@ -1,12 +1,6 @@
 import Script from "next/script";
-import {
-  buildThanksHtml,
-  buildThanksJsonLd,
-  getAbsoluteImageUrl,
-  getLanguageAlternates,
-  getLocalizedMeta,
-  resolveLanguageAsync,
-} from "../../lib/site";
+import { buildThanksJsonLd, getAbsoluteImageUrl, getLanguageAlternates, getLocalizedMeta, resolveLanguageAsync } from "../../lib/site";
+import { PublicShell } from "../../components/public-ui";
 
 export const revalidate = 3600;
 
@@ -32,7 +26,7 @@ export async function generateMetadata({ searchParams }) {
       images: [
         {
           url: getAbsoluteImageUrl("/assets/images/stock/vfr400.jpg"),
-          alt: "Honda VFR400R NC30 presentee par Nippon Heritage",
+          alt: "Honda VFR400R NC30 présentée par Nippon Heritage",
         },
       ],
     },
@@ -46,7 +40,6 @@ export async function generateMetadata({ searchParams }) {
 }
 
 export default function MerciPage() {
-  const html = buildThanksHtml();
   const jsonLd = buildThanksJsonLd();
 
   return (
@@ -55,7 +48,27 @@ export default function MerciPage() {
         {`document.documentElement.dataset.page="thanks";`}
       </Script>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <PublicShell activePath="/" showRail={false}>
+        <main className="thank-you-page">
+          <section className="search-section">
+            <div className="container">
+              <div className="section-heading centered on-dark">
+                <p className="section-kicker" data-i18n="thanks.kicker">
+                  Message envoyé
+                </p>
+                <h1 data-i18n="thanks.title">Merci, votre demande a bien été transmise.</h1>
+                <div className="accent-line" aria-hidden="true"></div>
+                <p data-i18n="thanks.body">
+                  Nous revenons vers vous sur l’e-mail indiqué dès que possible. Vous pouvez maintenant retourner au site principal.
+                </p>
+                <a className="button button-primary" href="/" data-home-link data-i18n="thanks.cta">
+                  Revenir à l’accueil
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+      </PublicShell>
       <Script src="/site-script.js" strategy="afterInteractive" />
     </>
   );

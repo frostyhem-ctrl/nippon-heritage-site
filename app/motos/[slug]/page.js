@@ -1,13 +1,8 @@
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import { getPublishedMotorcycleBySlug } from "../../../lib/motorcycles";
-import {
-  buildProductJsonLd,
-  buildProductMetadata,
-  getAbsoluteImageUrl,
-  getDetailChrome,
-  getFallbackProductDescription,
-} from "../../../lib/site";
+import { buildProductJsonLd, buildProductMetadata, getAbsoluteImageUrl, getFallbackProductDescription } from "../../../lib/site";
+import { PublicShell } from "../../../components/public-ui";
 
 export const revalidate = 120;
 
@@ -77,7 +72,6 @@ export default async function MotorcyclePage({ params }) {
     notFound();
   }
 
-  const { prefix, suffix } = getDetailChrome();
   const image = motorcycle.images?.[0] || "/assets/images/stock/vfr400.jpg";
   const jsonLd = buildProductJsonLd(motorcycle);
   const fallbackDescription = getFallbackProductDescription(motorcycle);
@@ -95,80 +89,73 @@ export default async function MotorcyclePage({ params }) {
         {`document.documentElement.dataset.page="product";`}
       </Script>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div dangerouslySetInnerHTML={{ __html: prefix }} />
-      <main className="product-page">
-        <section className="product-section">
-          <div className="container">
-            <div className="section-heading centered on-dark">
-              <p className="section-kicker">Moto disponible</p>
-              <h1>{motorcycle.title}</h1>
-              <div className="accent-line" aria-hidden="true"></div>
-              <p>{motorcycle.description || fallbackDescription}</p>
-            </div>
-
-            <div className="product-layout">
-              <div className="product-visual">
-                <img
-                  src={image}
-                  alt={motorcycle.title || "Moto japonaise de collection"}
-                  width="1280"
-                  height="960"
-                  loading="eager"
-                  decoding="async"
-                />
+      <PublicShell activePath="/motos-disponibles">
+        <main className="product-page">
+          <section className="product-section">
+            <div className="container">
+              <div className="section-heading centered on-dark">
+                <p className="section-kicker">Moto disponible</p>
+                <h1>{motorcycle.title}</h1>
+                <div className="accent-line" aria-hidden="true"></div>
+                <p>{motorcycle.description || fallbackDescription}</p>
               </div>
 
-              <aside className="product-panel">
-                <div className="stock-badges">
-                  {motorcycle.year ? <span>{motorcycle.year}</span> : null}
-                  {motorcycle.displacement ? <span>{motorcycle.displacement}</span> : null}
-                  {motorcycle.engine_type ? <span>{String(motorcycle.engine_type).toUpperCase()}</span> : null}
-                  <span>{motorcycle.origin_country || "Japon"}</span>
+              <div className="product-layout">
+                <div className="product-visual">
+                  <img src={image} alt={motorcycle.title || "Moto japonaise de collection"} width="1280" height="960" loading="eager" decoding="async" />
                 </div>
 
-                <p className="product-price">{price}</p>
+                <aside className="product-panel">
+                  <div className="stock-badges">
+                    {motorcycle.year ? <span>{motorcycle.year}</span> : null}
+                    {motorcycle.displacement ? <span>{motorcycle.displacement}</span> : null}
+                    {motorcycle.engine_type ? <span>{String(motorcycle.engine_type).toUpperCase()}</span> : null}
+                    <span>{motorcycle.origin_country || "Japon"}</span>
+                  </div>
 
-                <dl className="product-specs">
-                  {motorcycle.brand ? (
-                    <>
-                      <dt>Marque</dt>
-                      <dd>{motorcycle.brand}</dd>
-                    </>
-                  ) : null}
-                  {motorcycle.model ? (
-                    <>
-                      <dt>Modele</dt>
-                      <dd>{motorcycle.model}</dd>
-                    </>
-                  ) : null}
-                  {motorcycle.mileage ? (
-                    <>
-                      <dt>Kilometrage</dt>
-                      <dd>{new Intl.NumberFormat("fr-FR").format(motorcycle.mileage)} km</dd>
-                    </>
-                  ) : null}
-                  {motorcycle.slug ? (
-                    <>
-                      <dt>Reference</dt>
-                      <dd>{motorcycle.slug}</dd>
-                    </>
-                  ) : null}
-                </dl>
+                  <p className="product-price">{price}</p>
 
-                <div className="product-actions">
-                  <a className="button" href="/#commande">
-                    Faire une demande
-                  </a>
-                  <a className="button button-secondary" href="/#stock">
-                    Retour au stock
-                  </a>
-                </div>
-              </aside>
+                  <dl className="product-specs">
+                    {motorcycle.brand ? (
+                      <>
+                        <dt>Marque</dt>
+                        <dd>{motorcycle.brand}</dd>
+                      </>
+                    ) : null}
+                    {motorcycle.model ? (
+                      <>
+                        <dt>Modèle</dt>
+                        <dd>{motorcycle.model}</dd>
+                      </>
+                    ) : null}
+                    {motorcycle.mileage ? (
+                      <>
+                        <dt>Kilométrage</dt>
+                        <dd>{new Intl.NumberFormat("fr-FR").format(motorcycle.mileage)} km</dd>
+                      </>
+                    ) : null}
+                    {motorcycle.slug ? (
+                      <>
+                        <dt>Référence</dt>
+                        <dd>{motorcycle.slug}</dd>
+                      </>
+                    ) : null}
+                  </dl>
+
+                  <div className="product-actions">
+                    <a className="button" href="/recherche-personnalisee">
+                      Faire une demande
+                    </a>
+                    <a className="button button-secondary" href="/motos-disponibles">
+                      Retour aux motos
+                    </a>
+                  </div>
+                </aside>
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-      <div dangerouslySetInnerHTML={{ __html: suffix }} />
+          </section>
+        </main>
+      </PublicShell>
       <Script src="/site-script.js" strategy="afterInteractive" />
     </>
   );

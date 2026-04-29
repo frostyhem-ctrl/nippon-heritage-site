@@ -16,7 +16,7 @@ export const metadata = {
     images: [
       {
         url: getAbsoluteImageUrl("/assets/images/stock/vfr400.jpg"),
-        alt: "Honda VFR400R NC30 presentee par Nippon Heritage",
+        alt: "Honda VFR400R NC30 présentée par Nippon Heritage",
       },
     ],
   },

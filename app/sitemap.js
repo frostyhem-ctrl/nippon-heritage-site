@@ -6,14 +6,23 @@ export const revalidate = 300;
 export default async function sitemap() {
   const siteUrl = getSiteUrl();
   const motorcycles = await getPublishedMotorcyclesSafe();
+  const staticRoutes = [
+    "/",
+    "/a-propos",
+    "/motos-disponibles",
+    "/recherche-personnalisee",
+    "/services",
+    "/atelier-restauration",
+    "/contact",
+  ];
 
   return [
-    {
-      url: `${siteUrl}/`,
+    ...staticRoutes.map((path, index) => ({
+      url: `${siteUrl}${path}`,
       lastModified: new Date(),
       changeFrequency: "weekly",
-      priority: 1,
-    },
+      priority: index === 0 ? 1 : 0.8,
+    })),
     ...motorcycles.map((item) => ({
       url: `${siteUrl}/motos/${item.slug}`,
       lastModified: item.updated_at || item.created_at || new Date(),

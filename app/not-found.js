@@ -15,10 +15,10 @@ export default function NotFound() {
             <p className="section-kicker">404</p>
             <h1>Page introuvable</h1>
             <div className="accent-line" aria-hidden="true"></div>
-            <p>Le contenu demande n&apos;est plus disponible ou a ete deplace.</p>
+            <p>Le contenu demandé n&apos;est plus disponible ou a été déplacé.</p>
             <div className="button-row hero-actions">
               <a className="button" href="/">
-                Retour a l&apos;accueil
+                Retour à l&apos;accueil
               </a>
             </div>
           </div>

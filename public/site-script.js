@@ -1147,6 +1147,161 @@ Object.assign(translations.it, {
     "La messa in vendita si basa su una preparazione chiara, una presentazione seria e un dialogo diretto.",
 });
 
+Object.assign(translations.fr, {
+  "meta.home.title": "Nippon Heritage | Import moto Japon, motos japonaises de collection et sportives 2 temps",
+  "meta.home.description":
+    "Nippon Heritage est spécialisé dans l’import moto Japon et la sélection de motos japonaises de collection, sportives 2 temps et 4 temps, rares JDM et restaurées en France.",
+  "meta.stock.title": "Motos disponibles | Nippon Heritage",
+  "meta.stock.description":
+    "Découvrez les motos japonaises disponibles chez Nippon Heritage : 2 temps, 4 temps, sportives rares et modèles de collection.",
+  "meta.request.title": "Recherche personnalisée | Nippon Heritage",
+  "meta.request.description":
+    "Décrivez la moto japonaise recherchée et confiez à Nippon Heritage une sélection ciblée au Japon selon vos critères.",
+  "meta.servicesPage.title": "Services | Nippon Heritage",
+  "meta.servicesPage.description":
+    "Import sélectif, préparation atelier et vente de motos japonaises 2 temps et 4 temps chez Nippon Heritage.",
+  "meta.workshopPage.title": "Atelier et restauration | Nippon Heritage",
+  "meta.workshopPage.description":
+    "Découvrez la méthode atelier Nippon Heritage : contrôle, remise en état, préparation et présentation avant mise en vente.",
+  "meta.about.title": "À propos | Nippon Heritage",
+  "meta.about.description":
+    "Découvrez l’approche Nippon Heritage : sélection exigeante, import ciblé et valorisation de motos japonaises anciennes et rares.",
+  "meta.contactPage.title": "Contact | Nippon Heritage",
+  "meta.contactPage.description":
+    "Contactez Nippon Heritage pour une moto disponible, une recherche personnalisée ou un échange autour de votre projet.",
+  "meta.thanks.title": "Merci | Demande envoyée à Nippon Heritage",
+  "meta.thanks.description": "Confirmation d’envoi de votre demande à Nippon Heritage.",
+  "top.strip": "Import sélectif depuis le Japon • 2 temps & 4 temps • Atelier en France",
+  "aria.quickLinks": "Accès rapides",
+  "common.logoAlt": "Logo Nippon Heritage",
+  "nav.stock": "Motos disponibles",
+  "nav.request": "Recherche personnalisée",
+  "nav.contact": "Contact",
+  "nav.cta": "Faire une demande",
+  "hero.kicker": "Nippon Heritage • Sportives japonaises de collection",
+  "hero.title": "Motos japonaises rares, sélectionnées avec exigence.",
+  "hero.body":
+    "Nippon Heritage sélectionne, importe et valorise des motos japonaises anciennes, rares et emblématiques.",
+  "hero.ctaPrimary": "En savoir plus",
+  "hero.ctaSecondary": "Voir les motos",
+  "hero.card1.title": "Sélection au Japon",
+  "hero.card1.body": "Nous visons des motos cohérentes, propres et intéressantes pour la collection.",
+  "hero.card2.title": "Passage atelier",
+  "hero.card2.body": "Contrôle, remise en état et présentation avant la mise en vente en France.",
+  "hero.card3.title": "Positionnement clair",
+  "hero.card3.body": "Import, remise en état, vente. Aucune rubrique homologation n’est proposée.",
+  "band.item1": "Import de sportives japonaises",
+  "band.item2": "2 temps & 4 temps",
+  "band.item4": "Faible kilométrage privilégié",
+  "catalog.title": "Exemples d’arrivages et de modèles suivis.",
+  "catalog.body":
+    "Cette sélection présente des sportives japonaises 2 temps et 4 temps que nous pouvons proposer ou rechercher selon disponibilité.",
+  "catalog.resultLabel": "modèles affichés",
+  "catalog.toolbarNote": "Exemples de modèles suivis et régulièrement recherchés.",
+  "filters.typeLabel": "Filtrer par motorisation",
+  "filters.typeAll": "Toutes les motorisations",
+  "filters.sortRecent": "Année récente",
+  "filters.sortPriceDesc": "Prix décroissant",
+  "filters.sortYearAsc": "Année ancienne",
+  "filters.reset": "Réinitialiser les filtres",
+  "cards.rvf.body":
+    "V4 4 temps iconique, très recherchée pour son châssis compact et son identité RC45.",
+  "cards.vfr.body":
+    "Une 400 V4 de collection emblématique, parfaite pour une sélection sport japonaise premium.",
+  "cards.cbr.body":
+    "Une 400 quatre cylindres vive et légère, très cohérente pour une offre youngtimer sportive.",
+  "cards.nsr.body":
+    "Sportive 2 temps emblématique, base saine privilégiée pour une vente collection.",
+  "cards.rgv.body":
+    "Machine plus pointue, destinée à une clientèle qui cherche une vraie rareté sportive.",
+  "search.kicker": "Recherche personnalisée",
+  "search.title": "Vous avez un modèle précis en tête ? Nous pouvons le rechercher au Japon pour vous.",
+  "search.body":
+    "Indiquez le modèle souhaité, votre budget et vos critères. Nous revenons vers vous avec une recherche ciblée sur des motos cohérentes, saines et adaptées à votre projet.",
+  "form.modelLabel": "Modèle",
+  "form.typeLabel": "Motorisation",
+  "form.typeDefault": "2 temps, 4 temps...",
+  "form.yearLabel": "Année minimale",
+  "form.engineLabel": "Cylindrée",
+  "form.emailLabel": "E-mail",
+  "form.phoneLabel": "Téléphone",
+  "form.messageLabel": "Informations complémentaires",
+  "form.messagePlaceholder":
+    "Précisez la moto recherchée, l’état souhaité, les couleurs, la tolérance kilométrage ou votre objectif de collection.",
+  "services.title": "Import, sélection, atelier et vente de motos japonaises 2 temps et 4 temps.",
+  "services.import.title": "Import sélectif depuis le Japon",
+  "services.import.body":
+    "Le sourcing ne vise pas la quantité. Chaque moto est choisie pour sa cohérence, son état de départ et sa valeur potentielle une fois remise en présentation pour le marché français.",
+  "services.import.bullet1": "Recherche de sportives japonaises 2 temps et 4 temps",
+  "services.import.bullet2": "Priorité aux bases saines et peu kilométrées",
+  "services.import.bullet3": "Sélection adaptée à une clientèle collection",
+  "services.workshop.title": "Remise en état atelier avant mise en vente",
+  "services.workshop.body":
+    "Chaque moto fait l’objet d’un contrôle, d’une remise en état adaptée et d’une présentation soignée avant sa mise en vente.",
+  "services.workshop.bullet1": "Contrôle visuel et technique à réception",
+  "services.workshop.bullet2": "Interventions selon l’état réel de la machine",
+  "services.workshop.bullet3": "Présentation propre et valorisante avant diffusion",
+  "services.sale.title": "Vente de motos de collection à forte personnalité",
+  "services.sale.body":
+    "Nous privilégions une présentation claire, sérieuse et documentée, en accord avec le niveau d’exigence attendu sur ce type de motos.",
+  "services.sale.bullet2": "Recherche personnalisée pour demandes précises",
+  "services.sale.bullet3": "Aucune rubrique homologation intégrée au site",
+  "method.kicker": "Atelier & méthode",
+  "method.title": "Une méthode courte, lisible et crédible.",
+  "method.body":
+    "Notre méthode de travail est simple : sélectionner, contrôler, remettre en état et proposer des motos cohérentes à la vente.",
+  "method.step1.title": "Repérage",
+  "method.step1.body": "Veille des modèles suivis, lecture de l’état réel et tri rigoureux des opportunités.",
+  "method.step2.title": "Achat ciblé",
+  "method.step2.body": "Priorité aux motos complètes, désirables et adaptées à une remise en état sérieuse.",
+  "method.step3.title": "Préparation",
+  "method.step3.body": "Contrôle, nettoyage, intervention atelier et mise en présentation avant publication.",
+  "method.step4.body": "Diffusion plus premium, échange direct avec les acheteurs et recherche sur commande.",
+  "footer.brand": "Nippon Heritage • Import de motos japonaises 2 temps et 4 temps de collection.",
+  "thanks.kicker": "Message envoyé",
+  "thanks.title": "Merci, votre demande a bien été transmise.",
+  "thanks.body":
+    "Nous revenons vers vous sur l’e-mail indiqué dès que possible. Vous pouvez maintenant retourner au site principal.",
+  "thanks.cta": "Revenir à l’accueil",
+  "home.nav.kicker": "En savoir plus",
+  "home.nav.title": "Une entrée claire, directe et premium vers les pages du site.",
+  "home.nav.body":
+    "L’accueil reste volontairement court et met désormais l’accent sur les accès vers les pages utiles : stock, demande, services, atelier, contact et présentation.",
+  "home.nav.about.title": "À propos",
+  "home.nav.about.body": "Découvrir l’approche, la sélection et le positionnement Nippon Heritage.",
+  "home.nav.stock.title": "Motos disponibles",
+  "home.nav.stock.body": "Voir les modèles en vente et les références actuellement proposées.",
+  "home.nav.request.title": "Recherche personnalisée",
+  "home.nav.request.body": "Confier une recherche ciblée au Japon selon vos critères et votre budget.",
+  "home.nav.services.title": "Services",
+  "home.nav.services.body": "Retrouver l’import, la préparation atelier, la présentation et la vente.",
+  "home.nav.workshop.title": "Atelier / restauration",
+  "home.nav.workshop.body": "Comprendre la méthode, le contrôle et la remise en état avant diffusion.",
+  "home.nav.contact.title": "Contact",
+  "home.nav.contact.body": "Échanger directement au sujet d’un modèle, d’un arrivage ou d’une demande.",
+  "home.about.kicker": "À propos",
+  "home.about.title": "Une approche sélective, pensée pour des motos qui méritent mieux qu’un simple import.",
+  "home.about.body":
+    "Nippon Heritage sélectionne, importe et valorise des motos japonaises anciennes, rares et emblématiques.",
+  "home.about.card1.body":
+    "Les motos retenues privilégient la cohérence d’ensemble, la désirabilité et un historique lisible.",
+  "home.about.card2.title": "Présentation atelier avant diffusion",
+  "home.about.card2.body":
+    "Chaque machine passe par une remise en état adaptée avant sa mise en vente en France.",
+  "home.contact.title": "Échangez avec Nippon Heritage au sujet d’une moto ou d’une recherche ciblée.",
+  "home.contact.body":
+    "Pour un modèle précis, une demande d’approvisionnement ou un premier échange, le formulaire et l’e-mail direct restent les deux accès les plus simples.",
+  "home.contact.panel1.title": "Recherche personnalisée",
+  "home.contact.panel1.body":
+    "Indiquez le modèle souhaité, votre budget et le niveau d’exigence attendu pour la sélection.",
+  "home.contact.panel2.title": "Motos en vente",
+  "home.contact.panel2.body":
+    "Les motos publiées peuvent être complétées par des recherches en cours ou des arrivages à venir.",
+  "home.contact.panel3.title": "Atelier et présentation",
+  "home.contact.panel3.body":
+    "La mise en vente s’appuie sur une préparation claire, une présentation sérieuse et un échange direct.",
+});
+
 const supportedLanguages = Object.keys(translations);
 let currentLanguage = defaultLanguage;
 let runtimeConfig = {
@@ -1158,6 +1313,12 @@ const getSiteUrl = () => (runtimeConfig.siteUrl || defaultSiteUrl).replace(/\/+$
 const getPagePath = () => {
   if (page === "thanks") return "/merci";
   if (page === "product") return window.location.pathname;
+  if (page === "stock") return "/motos-disponibles";
+  if (page === "request") return "/recherche-personnalisee";
+  if (page === "servicesPage") return "/services";
+  if (page === "workshopPage") return "/atelier-restauration";
+  if (page === "about") return "/a-propos";
+  if (page === "contactPage") return "/contact";
   return "/";
 };
 const getPublicUrl = (language = currentLanguage, includeLanguageParam = true) => {

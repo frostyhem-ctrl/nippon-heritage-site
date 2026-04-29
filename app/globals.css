@@ -184,6 +184,10 @@ textarea {
   color: #fff;
 }
 
+.site-nav a[aria-current="page"] {
+  color: #fff;
+}
+
 .header-cta {
   display: inline-flex;
   align-items: center;
@@ -1350,6 +1354,10 @@ input[type="range"] {
 
 .home-about {
   padding: 0 0 88px;
+}
+
+.page-section-spaced {
+  padding: 88px 0;
 }
 
 .home-about-panel {

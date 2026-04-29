@@ -30,7 +30,7 @@
     });
     const payload = await response.json();
     if (!response.ok) {
-      throw new Error(payload.error || "Acces admin refuse.");
+      throw new Error(payload.error || "Accès admin refusé.");
     }
     return payload;
   };
@@ -61,7 +61,7 @@
         });
 
         if (error || !authData.session?.access_token) {
-          setMessage("Email ou mot de passe invalide.", "error");
+          setMessage("E-mail ou mot de passe invalide.", "error");
           return;
         }
 
@@ -70,7 +70,7 @@
           window.location.replace("/admin");
         } catch (verifyError) {
           await supabaseClient.auth.signOut();
-          setMessage(verifyError.message || "Acces admin refuse.", "error");
+          setMessage(verifyError.message || "Accès admin refusé.", "error");
         }
       });
 
