@@ -959,6 +959,194 @@ Object.assign(translations.it, {
   "meta.thanks.description": "La richiesta e stata inviata a Nippon Heritage.",
 });
 
+Object.assign(translations.fr, {
+  "hero.title": "Motos japonaises rares, selectionnees avec exigence.",
+  "hero.body":
+    "Nippon Heritage selectionne, importe et valorise des motos japonaises anciennes, rares et emblematiques.",
+  "hero.ctaPrimary": "En savoir plus",
+  "hero.ctaSecondary": "Voir les motos",
+  "home.nav.kicker": "En savoir plus",
+  "home.nav.title": "Une entree plus claire, plus nette et plus premium dans le meme esprit.",
+  "home.nav.body":
+    "Retrouvez rapidement les sections importantes du site sans perdre l'ambiance atelier et collection de Nippon Heritage.",
+  "home.nav.about.title": "A propos",
+  "home.nav.about.body": "Decouvrir l'approche, la selection et le positionnement Nippon Heritage.",
+  "home.nav.stock.title": "Motos en vente",
+  "home.nav.stock.body": "Voir les modeles presentes en stock ou utilises comme references de selection.",
+  "home.nav.request.title": "Recherche personnalisee",
+  "home.nav.request.body": "Confier une recherche ciblee au Japon selon vos criteres et votre budget.",
+  "home.nav.services.title": "Services",
+  "home.nav.services.body": "Retrouver l'import, la preparation atelier, la presentation et la vente.",
+  "home.nav.workshop.title": "Atelier / restauration",
+  "home.nav.workshop.body": "Comprendre la methode, le controle et la remise en etat avant diffusion.",
+  "home.nav.contact.title": "Contact",
+  "home.nav.contact.body": "Echanger directement au sujet d'un modele, d'un arrivage ou d'une recherche.",
+  "home.about.kicker": "A propos",
+  "home.about.title": "Une approche selective, pensee pour des motos qui meritent mieux qu'un simple import.",
+  "home.about.body":
+    "Nippon Heritage selectionne, importe et valorise des motos japonaises anciennes, rares et emblematiques.",
+  "home.about.card1.title": "Bases choisies avec exigence",
+  "home.about.card1.body":
+    "Les motos retenues privilegient la coherence d'ensemble, la desirabilite et un historique lisible.",
+  "home.about.card2.title": "Presentation atelier avant diffusion",
+  "home.about.card2.body":
+    "Chaque machine passe par une remise en etat adaptee avant sa mise en vente en France.",
+  "home.contact.kicker": "Contact",
+  "home.contact.title": "Echangez avec Nippon Heritage au sujet d'une moto ou d'une recherche ciblee.",
+  "home.contact.body":
+    "Pour un modele precis, une demande d'approvisionnement ou un premier echange, le formulaire et l'email direct restent les deux acces les plus simples.",
+  "home.contact.panel1.title": "Recherche personnalisee",
+  "home.contact.panel1.body":
+    "Indiquez le modele souhaite, votre budget et le niveau d'exigence attendu pour la selection.",
+  "home.contact.panel2.title": "Motos en vente",
+  "home.contact.panel2.body":
+    "Les motos publiees peuvent etre completees par des recherches en cours ou des arrivages a venir.",
+  "home.contact.panel3.title": "Atelier et presentation",
+  "home.contact.panel3.body":
+    "La mise en vente s'appuie sur une preparation claire, une presentation serieuse et un echange direct.",
+});
+
+Object.assign(translations.en, {
+  "hero.title": "Rare Japanese motorcycles, selected with real standards.",
+  "hero.body":
+    "Nippon Heritage selects, imports and enhances rare, iconic and collectible Japanese motorcycles.",
+  "hero.ctaPrimary": "Learn more",
+  "hero.ctaSecondary": "View the bikes",
+  "home.nav.kicker": "Learn more",
+  "home.nav.title": "A clearer, sharper and more premium entry point in the same spirit.",
+  "home.nav.body":
+    "Reach the key sections quickly without losing the workshop and heritage atmosphere of Nippon Heritage.",
+  "home.nav.about.title": "About",
+  "home.nav.about.body": "Understand the approach, the selection process and the Nippon Heritage positioning.",
+  "home.nav.stock.title": "Bikes for sale",
+  "home.nav.stock.body": "See the bikes currently shown in stock or used as selection references.",
+  "home.nav.request.title": "Custom sourcing",
+  "home.nav.request.body": "Request a focused search in Japan based on your criteria and budget.",
+  "home.nav.services.title": "Services",
+  "home.nav.services.body": "Find import, workshop preparation, presentation and sales support.",
+  "home.nav.workshop.title": "Workshop / restoration",
+  "home.nav.workshop.body": "Review the method, inspection and refurbishment approach before listing.",
+  "home.nav.contact.title": "Contact",
+  "home.nav.contact.body": "Get in touch directly about a model, an incoming bike or a specific request.",
+  "home.about.kicker": "About",
+  "home.about.title": "A selective approach built for motorcycles that deserve more than simple import.",
+  "home.about.body":
+    "Nippon Heritage selects, imports and enhances rare, iconic and collectible Japanese motorcycles.",
+  "home.about.card1.title": "Carefully chosen bases",
+  "home.about.card1.body":
+    "Selected motorcycles prioritize overall consistency, desirability and a readable history.",
+  "home.about.card2.title": "Workshop presentation before sale",
+  "home.about.card2.body":
+    "Each machine goes through an appropriate workshop pass before being offered in France.",
+  "home.contact.kicker": "Contact",
+  "home.contact.title": "Talk with Nippon Heritage about a motorcycle or a targeted sourcing request.",
+  "home.contact.body":
+    "For a specific model, a sourcing request or a first conversation, the form and direct email remain the easiest access points.",
+  "home.contact.panel1.title": "Custom sourcing",
+  "home.contact.panel1.body":
+    "Share the model you want, your budget and the level of selectivity you expect from the search.",
+  "home.contact.panel2.title": "Bikes for sale",
+  "home.contact.panel2.body":
+    "Published bikes can be complemented by ongoing searches or upcoming arrivals.",
+  "home.contact.panel3.title": "Workshop and presentation",
+  "home.contact.panel3.body":
+    "Every listing is supported by a clear preparation process, a serious presentation and direct exchanges.",
+});
+
+Object.assign(translations.es, {
+  "hero.title": "Motos japonesas raras, seleccionadas con exigencia.",
+  "hero.body":
+    "Nippon Heritage selecciona, importa y valoriza motos japonesas antiguas, raras y emblematicas.",
+  "hero.ctaPrimary": "Saber mas",
+  "hero.ctaSecondary": "Ver las motos",
+  "home.nav.kicker": "Saber mas",
+  "home.nav.title": "Una entrada mas clara, mas precisa y mas premium con el mismo espiritu.",
+  "home.nav.body":
+    "Acceda rapidamente a las secciones principales sin perder la atmosfera de taller y coleccion de Nippon Heritage.",
+  "home.nav.about.title": "Acerca de",
+  "home.nav.about.body": "Descubra el enfoque, la seleccion y el posicionamiento de Nippon Heritage.",
+  "home.nav.stock.title": "Motos en venta",
+  "home.nav.stock.body": "Ver las motos mostradas en stock o utilizadas como referencias de seleccion.",
+  "home.nav.request.title": "Busqueda personalizada",
+  "home.nav.request.body": "Encargar una busqueda precisa en Japon segun sus criterios y su presupuesto.",
+  "home.nav.services.title": "Servicios",
+  "home.nav.services.body": "Encontrar importacion, preparacion de taller, presentacion y venta.",
+  "home.nav.workshop.title": "Taller / restauracion",
+  "home.nav.workshop.body": "Comprender el metodo, la inspeccion y la puesta a punto antes de la publicacion.",
+  "home.nav.contact.title": "Contacto",
+  "home.nav.contact.body": "Hablar directamente sobre un modelo, una llegada o una busqueda concreta.",
+  "home.about.kicker": "Acerca de",
+  "home.about.title": "Un enfoque selectivo pensado para motos que merecen mas que una simple importacion.",
+  "home.about.body":
+    "Nippon Heritage selecciona, importa y valoriza motos japonesas antiguas, raras y emblematicas.",
+  "home.about.card1.title": "Bases elegidas con exigencia",
+  "home.about.card1.body":
+    "Las motos retenidas priorizan la coherencia general, el interes de coleccion y un historial legible.",
+  "home.about.card2.title": "Presentacion de taller antes de la venta",
+  "home.about.card2.body":
+    "Cada moto pasa por una puesta a punto adaptada antes de ofrecerse en Francia.",
+  "home.contact.kicker": "Contacto",
+  "home.contact.title": "Hable con Nippon Heritage sobre una moto o una busqueda dirigida.",
+  "home.contact.body":
+    "Para un modelo preciso, una solicitud de aprovisionamiento o un primer intercambio, el formulario y el email directo siguen siendo las dos vias mas simples.",
+  "home.contact.panel1.title": "Busqueda personalizada",
+  "home.contact.panel1.body":
+    "Indique el modelo deseado, su presupuesto y el nivel de exigencia esperado para la seleccion.",
+  "home.contact.panel2.title": "Motos en venta",
+  "home.contact.panel2.body":
+    "Las motos publicadas pueden completarse con busquedas en curso o proximas llegadas.",
+  "home.contact.panel3.title": "Taller y presentacion",
+  "home.contact.panel3.body":
+    "La puesta en venta se apoya en una preparacion clara, una presentacion seria y un intercambio directo.",
+});
+
+Object.assign(translations.it, {
+  "hero.title": "Moto giapponesi rare, selezionate con rigore.",
+  "hero.body":
+    "Nippon Heritage seleziona, importa e valorizza moto giapponesi d'epoca, rare ed emblematiche.",
+  "hero.ctaPrimary": "Scoprire di piu",
+  "hero.ctaSecondary": "Vedere le moto",
+  "home.nav.kicker": "Scoprire di piu",
+  "home.nav.title": "Un ingresso piu chiaro, piu preciso e piu premium nello stesso spirito.",
+  "home.nav.body":
+    "Raggiunga rapidamente le sezioni principali senza perdere l'atmosfera officina e heritage di Nippon Heritage.",
+  "home.nav.about.title": "Chi siamo",
+  "home.nav.about.body": "Scoprire l'approccio, la selezione e il posizionamento di Nippon Heritage.",
+  "home.nav.stock.title": "Moto in vendita",
+  "home.nav.stock.body": "Vedere le moto presenti in stock o utilizzate come riferimenti di selezione.",
+  "home.nav.request.title": "Ricerca personalizzata",
+  "home.nav.request.body": "Affidare una ricerca mirata in Giappone secondo i suoi criteri e il suo budget.",
+  "home.nav.services.title": "Servizi",
+  "home.nav.services.body": "Trovare importazione, preparazione in officina, presentazione e vendita.",
+  "home.nav.workshop.title": "Officina / restauro",
+  "home.nav.workshop.body": "Comprendere metodo, controllo e rimessa in ordine prima della pubblicazione.",
+  "home.nav.contact.title": "Contatto",
+  "home.nav.contact.body": "Parlare direttamente di un modello, di un arrivo o di una ricerca specifica.",
+  "home.about.kicker": "Chi siamo",
+  "home.about.title": "Un approccio selettivo pensato per moto che meritano piu di una semplice importazione.",
+  "home.about.body":
+    "Nippon Heritage seleziona, importa e valorizza moto giapponesi d'epoca, rare ed emblematiche.",
+  "home.about.card1.title": "Basi scelte con rigore",
+  "home.about.card1.body":
+    "Le moto selezionate privilegiano coerenza generale, desiderabilita e una storia leggibile.",
+  "home.about.card2.title": "Presentazione officina prima della vendita",
+  "home.about.card2.body":
+    "Ogni moto passa da una rimessa in ordine adeguata prima di essere proposta in Francia.",
+  "home.contact.kicker": "Contatto",
+  "home.contact.title": "Parli con Nippon Heritage di una moto o di una ricerca mirata.",
+  "home.contact.body":
+    "Per un modello preciso, una richiesta di approvvigionamento o un primo contatto, il modulo e l'email diretta restano i due accessi piu semplici.",
+  "home.contact.panel1.title": "Ricerca personalizzata",
+  "home.contact.panel1.body":
+    "Indichi il modello desiderato, il suo budget e il livello di selezione atteso per la ricerca.",
+  "home.contact.panel2.title": "Moto in vendita",
+  "home.contact.panel2.body":
+    "Le moto pubblicate possono essere affiancate da ricerche in corso o prossimi arrivi.",
+  "home.contact.panel3.title": "Officina e presentazione",
+  "home.contact.panel3.body":
+    "La messa in vendita si basa su una preparazione chiara, una presentazione seria e un dialogo diretto.",
+});
+
 const supportedLanguages = Object.keys(translations);
 let currentLanguage = defaultLanguage;
 let runtimeConfig = {

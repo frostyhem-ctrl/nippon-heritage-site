@@ -1136,8 +1136,306 @@ input[type="range"] {
   margin-top: 28px;
 }
 
+.home-page {
+  background:
+    radial-gradient(circle at top center, rgba(255, 106, 0, 0.08), transparent 28%),
+    linear-gradient(180deg, #191516 0%, #231f20 32%, #231f20 100%);
+}
+
+.home-page .catalog-section,
+.home-page .search-section,
+.home-page .services-section,
+.home-page .atelier-section,
+.home-page .contact-section {
+  padding: 88px 0;
+}
+
+.home-landing {
+  position: relative;
+  min-height: calc(100vh - 134px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.home-landing-backdrop,
+.home-landing-glow {
+  position: absolute;
+  inset: 0;
+}
+
+.home-landing-backdrop {
+  background:
+    linear-gradient(180deg, rgba(24, 21, 22, 0.48) 0%, rgba(24, 21, 22, 0.7) 40%, rgba(24, 21, 22, 0.94) 100%),
+    linear-gradient(90deg, rgba(20, 16, 17, 0.82) 0%, rgba(20, 16, 17, 0.36) 42%, rgba(20, 16, 17, 0.78) 100%),
+    url("/assets/images/stock/vfr400.jpg") center 40% / cover no-repeat;
+  transform: scale(1.02);
+}
+
+.home-landing-glow {
+  pointer-events: none;
+  filter: blur(46px);
+  opacity: 0.5;
+}
+
+.home-landing-glow-left {
+  inset: auto auto 6% 6%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(255, 106, 0, 0.14);
+}
+
+.home-landing-glow-right {
+  inset: 10% 10% auto auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.home-landing-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.96fr) minmax(300px, 0.68fr);
+  gap: 28px;
+  align-items: end;
+  width: 100%;
+  padding: 118px 0 70px;
+}
+
+.home-surface,
+.home-depth-card,
+.home-nav-card,
+.home-about-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+.home-landing-copy {
+  max-width: 780px;
+  padding: 38px;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(42, 36, 37, 0.9) 0%, rgba(33, 28, 29, 0.92) 100%);
+}
+
+.home-landing-logo {
+  width: min(340px, 72%);
+  height: auto;
+  margin-bottom: 16px;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 12px 24px rgba(0, 0, 0, 0.24));
+}
+
+.home-landing-copy h1,
+.home-about-copy h2 {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.home-landing-copy h1 {
+  font-size: clamp(3.5rem, 8vw, 6.2rem);
+  max-width: 10ch;
+}
+
+.home-landing-stack {
+  display: grid;
+  gap: 16px;
+  perspective: 1200px;
+}
+
+.home-depth-card {
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(38, 32, 33, 0.86);
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  transform-origin: center top;
+}
+
+.home-depth-card:hover,
+.home-depth-card:focus-within {
+  transform: translateY(-4px) rotateX(2deg) rotateY(-2deg);
+  border-color: rgba(255, 106, 0, 0.22);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
+}
+
+.home-depth-card span,
+.home-nav-index {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.home-depth-card strong,
+.home-nav-card h3,
+.home-about-card strong {
+  display: block;
+  margin: 0 0 10px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.6rem;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.home-depth-card p,
+.home-nav-card p,
+.home-about-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.home-overview {
+  padding: 88px 0 36px;
+}
+
+.home-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.home-nav-card {
+  position: relative;
+  min-height: 220px;
+  padding: 24px;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(46, 40, 41, 0.9) 0%, rgba(35, 30, 31, 0.94) 100%);
+  overflow: hidden;
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.home-nav-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255, 106, 0, 0.14), transparent 30%);
+  opacity: 0.85;
+}
+
+.home-nav-card:hover,
+.home-nav-card:focus-visible {
+  transform: translateY(-5px);
+  border-color: rgba(255, 106, 0, 0.24);
+  box-shadow: 0 30px 72px rgba(0, 0, 0, 0.28);
+}
+
+.home-nav-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-nav-card strong {
+  display: inline-flex;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-about {
+  padding: 0 0 88px;
+}
+
+.home-about-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.84fr);
+  gap: 24px;
+  padding: 34px;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(42, 36, 37, 0.9) 0%, rgba(33, 28, 29, 0.92) 100%);
+}
+
+.home-about-copy h2 {
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  max-width: 11ch;
+}
+
+.home-about-aside {
+  display: grid;
+  gap: 16px;
+}
+
+.home-about-card {
+  padding: 22px;
+  border-radius: 24px;
+  background: rgba(38, 32, 33, 0.82);
+}
+
+.home-page .section-band {
+  background: rgba(20, 17, 18, 0.92);
+}
+
+.home-page .filters-card,
+.home-page .search-form,
+.home-page .service-row,
+.home-page .method-grid article,
+.home-page .contact-panels article {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1150px) {
+  .home-landing-layout,
+  .home-about-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .home-nav-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 960px) {
   .product-layout {
     grid-template-columns: 1fr;
+  }
+
+  .home-landing {
+    min-height: auto;
+  }
+
+  .home-landing-layout {
+    grid-template-columns: 1fr;
+    padding-top: 94px;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-landing-copy,
+  .home-depth-card,
+  .home-nav-card,
+  .home-about-panel,
+  .home-about-card {
+    padding: 22px;
+  }
+
+  .home-landing-copy h1,
+  .home-about-copy h2 {
+    font-size: clamp(2.8rem, 16vw, 4.2rem);
+    max-width: none;
+  }
+
+  .home-landing-logo {
+    width: min(280px, 80%);
   }
 }
