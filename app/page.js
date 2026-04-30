@@ -179,18 +179,6 @@ export default function HomePage() {
 
           <section className="home-overview" id="en-savoir-plus">
             <div className="container">
-              <div className="section-heading centered">
-                <p className="section-kicker" data-i18n="home.nav.kicker">
-                  En savoir plus
-                </p>
-                <h2 data-i18n="home.nav.title">Un accès clair et direct aux pages essentielles du site.</h2>
-                <div className="accent-line" aria-hidden="true"></div>
-                <p data-i18n="home.nav.body">
-                  L’accueil reste volontairement court et met désormais l’accent sur les accès vers les pages utiles :
-                  stock, demande, services, atelier, contact et présentation.
-                </p>
-              </div>
-
               <div className="home-nav-grid">
                 {navigationCards.map((card) => (
                   <a key={card.href} className="home-nav-card" href={card.href}>
