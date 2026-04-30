@@ -1467,6 +1467,24 @@ input[type="range"] {
     linear-gradient(180deg, #0f0d0d 0%, #151112 24%, #1e1a1b 58%, #231f20 100%);
 }
 
+.site-background::before {
+  content: "";
+  position: absolute;
+  inset: -10%;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(15, 13, 13, 0.04) 0%, rgba(15, 13, 13, 0.72) 72%),
+    linear-gradient(180deg, rgba(12, 10, 10, 0.36) 0%, rgba(18, 14, 15, 0.74) 100%),
+    url("/assets/images/background/classic-sport-bg.jpg");
+  background-position: center, center, center 38%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.34;
+  filter: blur(22px) saturate(0.88) brightness(0.68);
+  transform: scale(1.12);
+  transform-origin: center;
+  pointer-events: none;
+}
+
 .site-background-grid,
 .site-background-lines,
 .site-background-focus,
