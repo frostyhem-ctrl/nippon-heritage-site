@@ -183,7 +183,7 @@ export default function HomePage() {
                 <p className="section-kicker" data-i18n="home.nav.kicker">
                   En savoir plus
                 </p>
-                <h2 data-i18n="home.nav.title">Une entrée claire, directe et premium vers les pages du site.</h2>
+                <h2 data-i18n="home.nav.title">Un accès clair et direct aux pages essentielles du site.</h2>
                 <div className="accent-line" aria-hidden="true"></div>
                 <p data-i18n="home.nav.body">
                   L’accueil reste volontairement court et met désormais l’accent sur les accès vers les pages utiles :

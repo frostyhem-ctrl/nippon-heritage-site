@@ -29,33 +29,32 @@ export const metadata = {
 
 const sections = [
   {
-    title: "État actuel du site",
+    title: "Usage actuel",
     paragraphs: [
-      "À la date de mise à jour de cette page, le site public Nippon Heritage ne comporte pas de solution d’analyse d’audience ou de publicité identifiée dans le code nécessitant, à elle seule, un recueil préalable du consentement des visiteurs.",
-      "Cette situation doit être réévaluée à chaque ajout d’outil tiers, de mesure d’audience, de pixel marketing, de lecteur vidéo externe ou d’intégration sociale.",
+      "Le site public Nippon Heritage ne met pas en avant de dispositif publicitaire ni d’outil de mesure d’audience visible destiné à suivre le comportement de navigation à des fins marketing.",
+      "Le fonctionnement du site peut toutefois s’appuyer sur des mécanismes techniques limités, nécessaires à l’affichage, à la sécurité, à certaines préférences locales et à l’administration.",
     ],
   },
   {
     title: "Traceurs techniques",
     paragraphs: [
-      "Le site peut utiliser des mécanismes techniques strictement nécessaires à son fonctionnement, par exemple pour mémoriser certaines préférences locales ou permettre le bon fonctionnement d’un espace d’administration.",
-      "Ces mécanismes ne doivent pas être détournés pour des finalités publicitaires ou de mesure non exemptée sans mise à jour préalable de cette politique et, si nécessaire, du recueil du consentement.",
+      "Certains traceurs strictement nécessaires peuvent être utilisés afin d’assurer la stabilité, la sécurité, le rendu ou l’administration du site.",
+      "Ces mécanismes ne sont pas destinés à la publicité ciblée ni à une exploitation commerciale du parcours de navigation.",
     ],
   },
   {
-    title: "Si de nouveaux cookies sont ajoutés",
+    title: "Évolutions éventuelles",
     items: [
-      "Informer clairement l’utilisateur de la finalité des traceurs",
-      "Permettre un refus aussi simple que l’acceptation lorsque le consentement est requis",
-      "Bloquer le dépôt des cookies non exemptés tant qu’aucun consentement valable n’a été recueilli",
-      "Prévoir une preuve de recueil du consentement et une durée de conservation adaptée",
+      "Toute intégration d’outil tiers non indispensable donnera lieu à une mise à jour de cette rubrique",
+      "Les usages nécessitant un consentement préalable feront l’objet d’un dispositif adapté",
+      "Les durées de conservation et finalités associées seront précisées selon les outils réellement utilisés",
     ],
   },
   {
-    title: "Gestion de vos préférences",
+    title: "Préférences de navigation",
     paragraphs: [
-      "Vous pouvez paramétrer votre navigateur pour limiter ou supprimer certains traceurs. Ce réglage peut toutefois affecter certaines fonctionnalités du site.",
-      "Pour toute question sur les mécanismes utilisés par Nippon Heritage, vous pouvez écrire à : frostyhem@gmail.com",
+      "Le navigateur peut être configuré pour limiter, refuser ou supprimer certains traceurs. Ce réglage peut toutefois modifier une partie du fonctionnement du site.",
+      "Les demandes d’information liées aux traceurs ou au fonctionnement du site peuvent être adressées via la page de contact.",
     ],
   },
 ];
@@ -65,7 +64,7 @@ export default function PolitiqueCookiesPage() {
     <LegalPage
       pageId="legalCookies"
       title="Politique de cookies"
-      intro="Cette page explique l’usage éventuel de cookies ou autres traceurs sur le site. Elle doit être mise à jour avant tout ajout d’outil de mesure d’audience, de publicité ou d’intégration tierce non indispensable."
+      intro="Cette page présente les principes généraux applicables aux cookies et traceurs susceptibles d’être utilisés dans le cadre du fonctionnement technique du site Nippon Heritage."
       sections={sections}
     />
   );

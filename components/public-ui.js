@@ -27,7 +27,7 @@ const footerNavigationLinks = [
 const footerAccessLinks = [
   { href: "/motos-disponibles", label: "Voir le stock" },
   { href: "/recherche-personnalisee", label: "Faire une demande" },
-  { href: "mailto:frostyhem@gmail.com", label: "frostyhem@gmail.com" },
+  { href: "/contact", label: "Formulaire de contact" },
 ];
 
 const legalLinks = [

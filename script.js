@@ -152,7 +152,7 @@ const translations = {
     "form.messagePlaceholder":
       "Precisez la moto recherchee, l'etat souhaite, les couleurs, la tolerance kilometrage ou votre objectif de collection.",
     "form.submit": "Envoyer la demande",
-    "form.helper": "Envoi direct des demandes sur frostyhem@gmail.com.",
+    "form.helper": "Les demandes sont traitees via le formulaire du site.",
     "services.kicker": "Nos services",
     "services.title": "Import, selection, atelier et vente de motos preparees.",
     "services.import.title": "Import selectif depuis le Japon",
@@ -319,7 +319,7 @@ const translations = {
     "form.messagePlaceholder":
       "Tell us about the bike you want, the condition you expect, preferred colors, mileage tolerance or your collecting goal.",
     "form.submit": "Send request",
-    "form.helper": "Requests are sent directly to frostyhem@gmail.com.",
+    "form.helper": "Requests are processed through the website form.",
     "services.kicker": "Services",
     "services.title": "Import, selection, workshop work and sale of prepared motorcycles.",
     "services.import.title": "Selective import from Japan",
@@ -486,7 +486,7 @@ const translations = {
     "form.messagePlaceholder":
       "Indica la moto buscada, el estado deseado, los colores, la tolerancia de kilometraje o tu objetivo de coleccion.",
     "form.submit": "Enviar solicitud",
-    "form.helper": "Las solicitudes se envian directamente a frostyhem@gmail.com.",
+    "form.helper": "Las solicitudes se tramitan a traves del formulario del sitio.",
     "services.kicker": "Servicios",
     "services.title": "Importacion, seleccion, taller y venta de motos preparadas.",
     "services.import.title": "Importacion selectiva desde Japon",
@@ -653,7 +653,7 @@ const translations = {
     "form.messagePlaceholder":
       "Indica la moto cercata, lo stato desiderato, i colori, la tolleranza chilometrica o il tuo obiettivo da collezione.",
     "form.submit": "Invia richiesta",
-    "form.helper": "Le richieste vengono inviate direttamente a frostyhem@gmail.com.",
+    "form.helper": "Le richieste vengono gestite tramite il modulo del sito.",
     "services.kicker": "Servizi",
     "services.title": "Importazione, selezione, officina e vendita di moto preparate.",
     "services.import.title": "Import selettivo dal Giappone",

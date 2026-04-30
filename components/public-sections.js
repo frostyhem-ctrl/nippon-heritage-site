@@ -288,7 +288,7 @@ export function SearchSection() {
           </p>
         </div>
 
-        <form className="search-form" id="search-form" action="https://formsubmit.co/frostyhem@gmail.com" method="POST">
+        <form className="search-form" id="search-form" action="/api/contact" method="POST">
           <input id="form-subject" type="hidden" name="_subject" value="Nouvelle demande depuis Nippon Heritage" data-i18n-value="form.subject" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_next" id="form-next" value="" />
@@ -363,7 +363,7 @@ export function SearchSection() {
               Envoyer la demande
             </button>
             <p className="form-feedback" data-i18n="form.helper">
-              Envoi direct des demandes sur frostyhem@gmail.com.
+              Les demandes sont traitées via le formulaire du site.
             </p>
           </div>
         </form>
@@ -479,7 +479,7 @@ export function WorkshopSection() {
           <article>
             <span>04</span>
             <h3 data-i18n="method.step4.title">Vente</h3>
-            <p data-i18n="method.step4.body">Diffusion plus premium, échange direct avec les acheteurs et recherche sur commande.</p>
+            <p data-i18n="method.step4.body">Diffusion soignée, échange direct avec les acheteurs et recherche sur commande.</p>
           </article>
         </div>
       </div>
@@ -534,15 +534,15 @@ export function ContactSection() {
           <h2 data-i18n="home.contact.title">Échangez avec Nippon Heritage au sujet d’une moto ou d’une recherche ciblée.</h2>
           <div className="accent-line" aria-hidden="true"></div>
           <p data-i18n="home.contact.body">
-            Pour un modèle précis, une demande d’approvisionnement ou un premier échange, le formulaire et l’e-mail direct
-            restent les deux accès les plus simples.
+            Pour un modèle précis, une demande d’approvisionnement ou un premier échange, la page de contact et le
+            formulaire dédié permettent un premier échange simple et direct.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="/recherche-personnalisee" data-i18n="nav.cta">
               Faire une demande
             </a>
-            <a className="button button-secondary" href="mailto:frostyhem@gmail.com">
-              frostyhem@gmail.com
+            <a className="button button-secondary" href="/contact">
+              Formulaire de contact
             </a>
           </div>
         </div>

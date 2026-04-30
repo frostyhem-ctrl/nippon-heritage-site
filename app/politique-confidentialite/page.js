@@ -29,72 +29,54 @@ export const metadata = {
 
 const sections = [
   {
-    title: "Responsable du traitement",
+    title: "Traitement des données",
     paragraphs: [
-      "Le responsable du traitement des données collectées via le site Nippon Heritage doit être identifié de manière précise avant mise en ligne définitive.",
-    ],
-    items: [
-      "Responsable du traitement : [à compléter]",
-      "Adresse postale : [à compléter]",
-      "Adresse e-mail de contact : frostyhem@gmail.com",
+      "Le site Nippon Heritage peut traiter certaines données transmises volontairement via les formulaires de contact et de recherche personnalisée.",
+      "Ces traitements sont limités aux besoins de gestion des demandes, du suivi des échanges et du bon fonctionnement technique du site.",
     ],
   },
   {
     title: "Données concernées",
-    paragraphs: [
-      "Le site peut collecter, selon les formulaires utilisés, des données d’identité, de contact et de projet afin de répondre aux demandes des internautes.",
-    ],
     items: [
-      "Nom et prénom",
-      "Adresse e-mail",
-      "Numéro de téléphone",
-      "Informations relatives à la moto recherchée, au budget et au projet",
-      "Données techniques minimales nécessaires au fonctionnement et à la sécurité du site",
+      "Identité et coordonnées transmises dans les formulaires",
+      "Informations relatives à une moto recherchée, au budget et au projet",
+      "Données techniques nécessaires à la sécurité, à l’administration et à la stabilité du site",
     ],
   },
   {
-    title: "Finalités et bases légales",
+    title: "Finalités",
     items: [
       "Répondre à une demande de contact ou de recherche personnalisée",
-      "Assurer le suivi des échanges précontractuels",
-      "Administrer et sécuriser le site",
-      "La base légale doit être confirmée selon le cas : consentement, mesures précontractuelles à votre demande ou intérêt légitime pour la sécurité du site",
+      "Assurer le suivi des échanges liés au site",
+      "Gérer l’administration technique et la sécurité de la plateforme",
     ],
   },
   {
     title: "Destinataires",
     paragraphs: [
-      "Les données sont destinées à Nippon Heritage et, si nécessaire, à ses prestataires techniques strictement impliqués dans l’hébergement, l’administration du site, la gestion des formulaires ou la base de données.",
-      "Selon la configuration actuelle du site, cela peut inclure des prestataires techniques d’hébergement, d’envoi de formulaires et d’administration. La liste exacte doit être validée avant publication définitive.",
+      "Les informations transmises via le site sont destinées au traitement des demandes dans le cadre de l’activité présentée par Nippon Heritage.",
+      "Des prestataires techniques peuvent intervenir lorsque cela est nécessaire à l’hébergement, au traitement des formulaires, à l’administration ou à la maintenance du site.",
     ],
   },
   {
-    title: "Durées de conservation",
+    title: "Conservation",
     paragraphs: [
-      "Les données ne doivent pas être conservées au-delà de la durée nécessaire à la finalité poursuivie. Les durées exactes doivent être fixées et documentées par l’entreprise.",
-    ],
-    items: [
-      "Demandes de contact et de recherche : [durée à compléter]",
-      "Échanges commerciaux ou précontractuels : [durée à compléter]",
-      "Journaux techniques et sécurité : [durée à compléter]",
+      "Les données sont conservées pendant une durée cohérente avec la nature de la demande, les échanges engagés et les impératifs techniques ou de sécurité liés au fonctionnement du site.",
+      "Les informations devenues inutiles sont supprimées, archivées ou anonymisées selon leur nature.",
     ],
   },
   {
-    title: "Vos droits",
+    title: "Droits",
     paragraphs: [
-      "Conformément à la réglementation applicable, vous pouvez demander l’accès, la rectification, l’effacement, la limitation ou, selon le cas, l’opposition au traitement de vos données.",
-      "Vous pouvez également introduire une réclamation auprès de la CNIL si vous estimez que vos droits ne sont pas respectés.",
-    ],
-    items: [
-      "Contact d’exercice des droits : frostyhem@gmail.com",
-      "Autorité de contrôle : CNIL — www.cnil.fr",
+      "Toute personne concernée peut solliciter l’accès, la rectification, l’effacement ou la limitation du traitement de ses données, selon le cadre applicable.",
+      "Les demandes relatives aux données personnelles peuvent être adressées via la page de contact du site. Une réclamation peut également être introduite auprès de la CNIL.",
     ],
   },
   {
-    title: "Sécurité et transferts",
+    title: "Sécurité",
     paragraphs: [
-      "Nippon Heritage doit mettre en place des mesures raisonnables de sécurité pour protéger les données personnelles contre l’accès non autorisé, la perte, l’altération ou la divulgation.",
-      "Si des prestataires situés hors de l’Union européenne sont utilisés, les garanties applicables et les mécanismes de transfert doivent être documentés ici avant mise en ligne définitive.",
+      "Des mesures techniques et organisationnelles adaptées sont mises en œuvre afin de préserver la confidentialité, l’intégrité et la disponibilité des données traitées via le site.",
+      "Les flux, outils et services utilisés sont encadrés dans une logique de minimisation et de protection des données.",
     ],
   },
 ];
@@ -104,7 +86,7 @@ export default function PolitiqueConfidentialitePage() {
     <LegalPage
       pageId="legalPrivacy"
       title="Politique de confidentialité"
-      intro="Cette page décrit la manière dont les données personnelles peuvent être traitées via les formulaires et les services techniques du site. Elle doit être relue et complétée avec vos informations d’entreprise avant publication finale."
+      intro="Cette page présente les principes généraux appliqués au traitement des données personnelles via les formulaires et les services techniques associés au site Nippon Heritage."
       sections={sections}
     />
   );

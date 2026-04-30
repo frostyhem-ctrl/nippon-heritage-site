@@ -14,12 +14,6 @@ export function LegalPage({ pageId, title, intro, sections }) {
               <div className="legal-shell">
                 <div className="legal-copy">
                   <PageLead kicker="Informations légales" title={title} body={intro} />
-                  <div className="legal-note">
-                    <p>
-                      Les champs signalés comme « à compléter » doivent être remplacés par les informations exactes de
-                      l’entreprise avant publication définitive.
-                    </p>
-                  </div>
                 </div>
 
                 <div className="legal-grid">
