@@ -1479,7 +1479,7 @@ input[type="range"] {
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.34;
-  filter: blur(22px) saturate(0.88) brightness(0.68);
+  filter: blur(15px) saturate(0.88) brightness(0.68);
   transform: scale(1.12);
   transform-origin: center;
   pointer-events: none;
