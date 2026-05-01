@@ -2,7 +2,6 @@
 
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
 function createEphemeralSupabaseClient() {
@@ -40,7 +39,6 @@ async function syncAdminSession(accessToken) {
 }
 
 export function AdminLoginForm() {
-  const router = useRouter();
   const supabaseClient = useMemo(() => createEphemeralSupabaseClient(), []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -66,11 +64,8 @@ export function AdminLoginForm() {
       }
 
       await syncAdminSession(data.session.access_token);
-      await supabaseClient.auth.signOut();
-      router.replace("/admin");
-      router.refresh();
+      window.location.assign("/admin");
     } catch (error) {
-      await supabaseClient.auth.signOut();
       setMessage(error.message || "Accès admin refusé.");
       setMessageTone("error");
       setIsLoading(false);
