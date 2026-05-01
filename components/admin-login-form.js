@@ -3,9 +3,9 @@
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 
-function createBrowserSupabaseClient() {
+function createEphemeralSupabaseClient() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
@@ -13,7 +13,12 @@ function createBrowserSupabaseClient() {
     throw new Error("Les variables publiques Supabase sont manquantes.");
   }
 
-  return createClient(url, anonKey);
+  return createClient(url, anonKey, {
+    auth: {
+      persistSession: false,
+      autoRefreshToken: false,
+    },
+  });
 }
 
 async function syncAdminSession(accessToken) {
@@ -36,58 +41,15 @@ async function syncAdminSession(accessToken) {
 
 export function AdminLoginForm() {
   const router = useRouter();
+  const supabaseClient = useMemo(() => createEphemeralSupabaseClient(), []);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [messageTone, setMessageTone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isReady, setIsReady] = useState(false);
-  const [supabaseClient, setSupabaseClient] = useState(null);
-
-  useEffect(() => {
-    let mounted = true;
-
-    async function bootstrap() {
-      try {
-        const client = createBrowserSupabaseClient();
-        if (!mounted) {
-          return;
-        }
-
-        setSupabaseClient(client);
-
-        const { data } = await client.auth.getSession();
-        if (data.session?.access_token) {
-          await syncAdminSession(data.session.access_token);
-          router.replace("/admin");
-          router.refresh();
-          return;
-        }
-
-        setIsReady(true);
-      } catch (error) {
-        if (!mounted) {
-          return;
-        }
-
-        setMessage(error.message || "Impossible de charger la connexion admin.");
-        setMessageTone("error");
-        setIsReady(true);
-      }
-    }
-
-    bootstrap();
-
-    return () => {
-      mounted = false;
-    };
-  }, [router]);
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if (!supabaseClient) {
-      return;
-    }
 
     setIsLoading(true);
     setMessage("Connexion en cours...");
@@ -104,13 +66,11 @@ export function AdminLoginForm() {
       }
 
       await syncAdminSession(data.session.access_token);
+      await supabaseClient.auth.signOut();
       router.replace("/admin");
       router.refresh();
     } catch (error) {
-      if (supabaseClient) {
-        await supabaseClient.auth.signOut();
-      }
-
+      await supabaseClient.auth.signOut();
       setMessage(error.message || "Accès admin refusé.");
       setMessageTone("error");
       setIsLoading(false);
@@ -136,7 +96,7 @@ export function AdminLoginForm() {
           <form className="admin-stack" onSubmit={handleSubmit}>
             <label className="admin-field">
               <span>E-mail</span>
-              <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required autoComplete="email" disabled={!isReady || isLoading} />
+              <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} required autoComplete="email" disabled={isLoading} />
             </label>
             <label className="admin-field">
               <span>Mot de passe</span>
@@ -146,12 +106,12 @@ export function AdminLoginForm() {
                 onChange={(event) => setPassword(event.target.value)}
                 required
                 autoComplete="current-password"
-                disabled={!isReady || isLoading}
+                disabled={isLoading}
               />
             </label>
 
             <div className="login-actions">
-              <button type="submit" className="admin-button" disabled={!isReady || isLoading}>
+              <button type="submit" className="admin-button" disabled={isLoading}>
                 {isLoading ? "Connexion..." : "Se connecter"}
               </button>
               <Link className="admin-secondary" href="/">

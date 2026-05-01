@@ -1,8 +1,7 @@
 "use client";
 
-import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 const statusOptions = [
   { value: "draft", label: "Brouillon" },
@@ -155,32 +154,6 @@ function serializeFormState(formState, overrideStatus) {
   };
 }
 
-function createBrowserSupabaseClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!url || !anonKey) {
-    return null;
-  }
-
-  return createClient(url, anonKey);
-}
-
-async function syncAdminSession(accessToken) {
-  if (!accessToken) {
-    return;
-  }
-
-  await fetch("/api/admin/session", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    credentials: "same-origin",
-    body: JSON.stringify({ accessToken }),
-  });
-}
-
 async function compressImageFile(file) {
   if (!file.type.startsWith("image/") || file.size <= 2_000_000) {
     return file;
@@ -257,28 +230,6 @@ export function AdminDashboard({ initialItems = [], initialProfile }) {
   const [statusFilter, setStatusFilter] = useState("all");
   const [deleteArmed, setDeleteArmed] = useState(false);
   const [draggedImageId, setDraggedImageId] = useState("");
-  const [supabaseClient, setSupabaseClient] = useState(null);
-
-  useEffect(() => {
-    const client = createBrowserSupabaseClient();
-    if (!client) {
-      return undefined;
-    }
-
-    setSupabaseClient(client);
-
-    const {
-      data: { subscription },
-    } = client.auth.onAuthStateChange(async (_event, session) => {
-      if (session?.access_token) {
-        await syncAdminSession(session.access_token);
-      }
-    });
-
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, []);
 
   const filteredItems = useMemo(() => {
     const normalizedSearch = search.trim().toLowerCase();
@@ -601,9 +552,6 @@ export function AdminDashboard({ initialItems = [], initialProfile }) {
   async function logout() {
     try {
       await requestJson("/api/admin/session", { method: "DELETE" });
-      if (supabaseClient) {
-        await supabaseClient.auth.signOut();
-      }
     } finally {
       window.location.replace("/admin/login");
     }

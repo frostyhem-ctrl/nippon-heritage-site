@@ -330,8 +330,10 @@ body.admin-shell,
 .admin-list-thumb img {
   width: 112px;
   height: 88px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 16px;
+  background: rgba(10, 8, 9, 0.48);
+  padding: 6px;
 }
 
 .admin-list-copy {
@@ -468,8 +470,10 @@ body.admin-shell,
 .admin-gallery-card img {
   width: 100%;
   aspect-ratio: 16 / 11;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  background: rgba(10, 8, 9, 0.48);
+  padding: 10px;
 }
 
 .admin-gallery-meta {
@@ -493,10 +497,12 @@ body.admin-shell,
 .admin-preview-image {
   width: 100%;
   aspect-ratio: 16 / 11;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   border-radius: 18px;
   margin-bottom: 16px;
+  background: rgba(10, 8, 9, 0.48);
+  padding: 12px;
 }
 
 .admin-preview-copy strong {
