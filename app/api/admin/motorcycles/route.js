@@ -1,12 +1,15 @@
 import { NextResponse } from "next/server";
 import { requireAdmin } from "../../../../lib/auth";
-import { getAdminMotorcycleById, getAdminMotorcycles, normalizeMotorcyclePayload } from "../../../../lib/motorcycles";
+import {
+  createAdminMotorcycle,
+  getAdminMotorcycleById,
+  getAdminMotorcycles,
+  normalizeMotorcyclePayload,
+  updateAdminMotorcycle,
+} from "../../../../lib/motorcycles";
 import { getStorageBucket } from "../../../../lib/env";
 
 export const runtime = "nodejs";
-
-const fields =
-  "id, title, brand, model, year, mileage, displacement, engine_type, motorcycle_type, price, description, condition, origin_country, import_details, location, status, slug, images, image_paths, published_at, created_at, updated_at";
 
 async function removeStoredImages(serviceClient, imagePaths = []) {
   const paths = Array.isArray(imagePaths) ? imagePaths.map((value) => String(value || "").trim()).filter(Boolean) : [];
@@ -39,20 +42,12 @@ export async function POST(request) {
     }
 
     const payload = normalizeMotorcyclePayload(await request.json());
-    const { data, error } = await authResult.serviceClient
-      .from("motorcycles")
-      .insert(payload)
-      .select(fields)
-      .single();
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 400 });
-    }
+    const data = await createAdminMotorcycle(authResult.serviceClient, payload);
 
     const item = await getAdminMotorcycleById(authResult.serviceClient, data.id);
     return NextResponse.json({ item }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: error.message || "Erreur interne." }, { status: 500 });
+    return NextResponse.json({ error: error.message || "Erreur interne." }, { status: 400 });
   }
 }
 
@@ -74,21 +69,12 @@ export async function PUT(request) {
     }
 
     const payload = normalizeMotorcyclePayload(body, currentItem);
-    const { data, error } = await authResult.serviceClient
-      .from("motorcycles")
-      .update(payload)
-      .eq("id", body.id)
-      .select(fields)
-      .single();
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 400 });
-    }
+    const data = await updateAdminMotorcycle(authResult.serviceClient, body.id, payload);
 
     const item = await getAdminMotorcycleById(authResult.serviceClient, data.id);
     return NextResponse.json({ item });
   } catch (error) {
-    return NextResponse.json({ error: error.message || "Erreur interne." }, { status: 500 });
+    return NextResponse.json({ error: error.message || "Erreur interne." }, { status: 400 });
   }
 }
 
