@@ -1,10 +1,24 @@
 import Script from "next/script";
 import { notFound } from "next/navigation";
+import { PublicShell } from "../../../components/public-ui";
+import { MotorcyclePublicGallery } from "../../../components/motorcycle-public-gallery";
 import { getPublishedMotorcycleBySlug } from "../../../lib/motorcycles";
 import { buildProductJsonLd, buildProductMetadata, getAbsoluteImageUrl, getFallbackProductDescription } from "../../../lib/site";
-import { PublicShell } from "../../../components/public-ui";
 
 export const revalidate = 120;
+
+function formatStatusLabel(status) {
+  switch (status) {
+    case "available":
+      return "Disponible";
+    case "reserved":
+      return "Réservée";
+    case "sold":
+      return "Vendue";
+    default:
+      return "Brouillon";
+  }
+}
 
 export async function generateMetadata({ params }) {
   const resolvedParams = await params;
@@ -72,7 +86,6 @@ export default async function MotorcyclePage({ params }) {
     notFound();
   }
 
-  const image = motorcycle.images?.[0] || "/assets/images/stock/vfr400.jpg";
   const jsonLd = buildProductJsonLd(motorcycle);
   const fallbackDescription = getFallbackProductDescription(motorcycle);
   const price = new Intl.NumberFormat("fr-FR", {
@@ -82,6 +95,9 @@ export default async function MotorcyclePage({ params }) {
   })
     .format(Number(motorcycle.price || 0))
     .replace(/\u00a0/g, " ");
+
+  const statusLabel = formatStatusLabel(motorcycle.status);
+  const galleryImages = motorcycle.gallery?.map((item) => item.url) || motorcycle.images || [];
 
   return (
     <>
@@ -94,16 +110,14 @@ export default async function MotorcyclePage({ params }) {
           <section className="product-section">
             <div className="container">
               <div className="section-heading centered on-dark">
-                <p className="section-kicker">Moto disponible</p>
+                <p className="section-kicker">Moto en vente</p>
                 <h1>{motorcycle.title}</h1>
                 <div className="accent-line" aria-hidden="true"></div>
                 <p>{motorcycle.description || fallbackDescription}</p>
               </div>
 
               <div className="product-layout">
-                <div className="product-visual">
-                  <img src={image} alt={motorcycle.title || "Moto japonaise de collection"} width="1280" height="960" loading="eager" decoding="async" />
-                </div>
+                <MotorcyclePublicGallery title={motorcycle.title} images={galleryImages} />
 
                 <aside className="product-panel">
                   <div className="stock-badges">
@@ -111,6 +125,7 @@ export default async function MotorcyclePage({ params }) {
                     {motorcycle.displacement ? <span>{motorcycle.displacement}</span> : null}
                     {motorcycle.engine_type ? <span>{String(motorcycle.engine_type).toUpperCase()}</span> : null}
                     <span>{motorcycle.origin_country || "Japon"}</span>
+                    {motorcycle.status !== "available" ? <span>{statusLabel}</span> : null}
                   </div>
 
                   <p className="product-price">{price}</p>
@@ -128,10 +143,34 @@ export default async function MotorcyclePage({ params }) {
                         <dd>{motorcycle.model}</dd>
                       </>
                     ) : null}
+                    {motorcycle.motorcycle_type ? (
+                      <>
+                        <dt>Type</dt>
+                        <dd>{motorcycle.motorcycle_type}</dd>
+                      </>
+                    ) : null}
+                    {motorcycle.condition ? (
+                      <>
+                        <dt>État</dt>
+                        <dd>{motorcycle.condition}</dd>
+                      </>
+                    ) : null}
                     {motorcycle.mileage ? (
                       <>
                         <dt>Kilométrage</dt>
                         <dd>{new Intl.NumberFormat("fr-FR").format(motorcycle.mileage)} km</dd>
+                      </>
+                    ) : null}
+                    {motorcycle.location ? (
+                      <>
+                        <dt>Localisation</dt>
+                        <dd>{motorcycle.location}</dd>
+                      </>
+                    ) : null}
+                    {motorcycle.import_details ? (
+                      <>
+                        <dt>Importation</dt>
+                        <dd>{motorcycle.import_details}</dd>
                       </>
                     ) : null}
                     {motorcycle.slug ? (

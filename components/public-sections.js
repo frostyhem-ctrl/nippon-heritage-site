@@ -1,66 +1,3 @@
-const fallbackMotorcycles = [
-  {
-    title: "Honda RVF400R NC35",
-    brand: "Honda",
-    year: 1994,
-    displacement: "399 cc",
-    engine_type: "4t",
-    price: 14900,
-    descriptionKey: "cards.rvf.body",
-    description: "V4 4 temps iconique, très recherchée pour son châssis compact et son identité RC45.",
-    image: "/assets/images/stock/rvf400.jpg",
-    href: "/recherche-personnalisee",
-  },
-  {
-    title: "Honda VFR400R NC30",
-    brand: "Honda",
-    year: 1991,
-    displacement: "399 cc",
-    engine_type: "4t",
-    price: 13900,
-    descriptionKey: "cards.vfr.body",
-    description: "Une 400 V4 de collection emblématique, parfaite pour une sélection sport japonaise premium.",
-    image: "/assets/images/stock/vfr400.jpg",
-    href: "/recherche-personnalisee",
-  },
-  {
-    title: "Honda CBR400RR NC29",
-    brand: "Honda",
-    year: 1992,
-    displacement: "399 cc",
-    engine_type: "4t",
-    price: 11900,
-    descriptionKey: "cards.cbr.body",
-    description: "Une 400 quatre cylindres vive et légère, très cohérente pour une offre youngtimer sportive.",
-    image: "/assets/images/stock/cbr400.jpg",
-    href: "/recherche-personnalisee",
-  },
-  {
-    title: "Honda NSR250R MC18",
-    brand: "Honda",
-    year: 1988,
-    displacement: "249 cc",
-    engine_type: "2t",
-    price: 18900,
-    descriptionKey: "cards.nsr.body",
-    description: "Sportive 2 temps emblématique, base saine privilégiée pour une vente collection.",
-    image: "/assets/images/stock/nsr250.jpg",
-    href: "/recherche-personnalisee",
-  },
-  {
-    title: "Suzuki RGV250 VJ22",
-    brand: "Suzuki",
-    year: 1994,
-    displacement: "249 cc",
-    engine_type: "2t",
-    price: 16900,
-    descriptionKey: "cards.rgv.body",
-    description: "Machine plus pointue, destinée à une clientèle qui cherche une vraie rareté sportive.",
-    image: "/assets/images/stock/rgv250-rj22.jpg",
-    href: "/recherche-personnalisee",
-  },
-];
-
 function formatVisiblePrice(value) {
   return new Intl.NumberFormat("fr-FR", {
     style: "currency",
@@ -86,6 +23,17 @@ function normalizeEngineType(value = "") {
   };
 }
 
+function getStatusLabel(value = "") {
+  const normalized = String(value || "").trim().toLowerCase();
+  if (normalized === "reserved") {
+    return "Réservée";
+  }
+  if (normalized === "sold") {
+    return "Vendue";
+  }
+  return "Disponible";
+}
+
 function buildSearchText(item, engine) {
   return [
     item.title,
@@ -94,6 +42,8 @@ function buildSearchText(item, engine) {
     item.year,
     item.displacement,
     item.origin_country,
+    item.location,
+    item.motorcycle_type,
     engine.filterValue,
     engine.badge,
     "japon",
@@ -104,16 +54,8 @@ function buildSearchText(item, engine) {
     .join(" ");
 }
 
-function getDisplayMotorcycles(motorcycles = []) {
-  if (Array.isArray(motorcycles) && motorcycles.length) {
-    return motorcycles;
-  }
-
-  return fallbackMotorcycles;
-}
-
 export function StockSection({ motorcycles = [], pageTitle = "Motos disponibles", pageBody }) {
-  const items = getDisplayMotorcycles(motorcycles);
+  const items = Array.isArray(motorcycles) ? motorcycles : [];
 
   return (
     <section className="catalog-section">
@@ -220,50 +162,68 @@ export function StockSection({ motorcycles = [], pageTitle = "Motos disponibles"
                 <strong data-i18n="catalog.resultLabel">modèles affichés</strong>
               </div>
               <p className="toolbar-note" data-i18n="catalog.toolbarNote">
-                Exemples de modèles suivis et régulièrement recherchés.
+                Motos publiées depuis l’administration Nippon Heritage.
               </p>
             </div>
 
             <div className="stock-grid" id="stock-grid">
-              {items.map((item) => {
-                const engine = normalizeEngineType(item.engine_type);
-                const image = item.images?.[0] || item.image || "/assets/images/stock/vfr400.jpg";
-                const href = item.slug ? `/motos/${encodeURIComponent(item.slug)}` : item.href || "/recherche-personnalisee";
+              {items.length ? (
+                items.map((item) => {
+                  const engine = normalizeEngineType(item.engine_type);
+                  const image = item.images?.[0] || "/assets/images/stock/vfr400.jpg";
+                  const href = item.slug ? `/motos/${encodeURIComponent(item.slug)}` : "/recherche-personnalisee";
 
-                return (
-                  <article
-                    key={`${item.title}-${item.year}-${item.price}`}
-                    className="stock-card"
-                    data-brand={item.brand || ""}
-                    data-type={engine.filterValue}
-                    data-price={Number(item.price || 0)}
-                    data-year={Number(item.year || 0)}
-                    data-search={buildSearchText(item, engine)}
-                  >
-                    <img src={image} alt={item.title || "Moto Nippon Heritage"} width="1280" height="960" loading="lazy" decoding="async" />
-                    <div className="stock-card-body">
-                      <div className="stock-badges">
-                        <span>{item.year || "-"}</span>
-                        <span>{item.displacement || "-"}</span>
-                        <span>{engine.badge}</span>
-                        <span data-i18n="common.japan">{item.origin_country || "Japon"}</span>
+                  return (
+                    <article
+                      key={`${item.id || item.slug || item.title}-${item.year}-${item.price}`}
+                      className="stock-card"
+                      data-brand={item.brand || ""}
+                      data-type={engine.filterValue}
+                      data-price={Number(item.price || 0)}
+                      data-year={Number(item.year || 0)}
+                      data-search={buildSearchText(item, engine)}
+                    >
+                      <img src={image} alt={item.title || "Moto Nippon Heritage"} width="1280" height="960" loading="lazy" decoding="async" />
+                      <div className="stock-card-body">
+                        <div className="stock-badges">
+                          <span>{item.year || "-"}</span>
+                          <span>{item.displacement || "-"}</span>
+                          <span>{engine.badge}</span>
+                          <span data-i18n="common.japan">{item.origin_country || "Japon"}</span>
+                          {item.status && item.status !== "available" ? <span>{getStatusLabel(item.status)}</span> : null}
+                        </div>
+                        <h3>{item.title}</h3>
+                        <p>{item.description || "Annonce publiée par Nippon Heritage."}</p>
+                        <div className="stock-quick-specs">
+                          {item.model ? <span>{item.model}</span> : null}
+                          {item.mileage ? <span>{new Intl.NumberFormat("fr-FR").format(item.mileage)} km</span> : null}
+                          {item.location ? <span>{item.location}</span> : null}
+                        </div>
+                        <div className="stock-footer">
+                          <strong>{formatVisiblePrice(item.price)}</strong>
+                          <a href={href} data-i18n="common.viewMore">
+                            Voir plus
+                          </a>
+                        </div>
                       </div>
-                      <h3>{item.title}</h3>
-                      {item.descriptionKey ? (
-                        <p data-i18n={item.descriptionKey}>{item.description}</p>
-                      ) : (
-                        <p>{item.description}</p>
-                      )}
-                      <div className="stock-footer">
-                        <strong>{formatVisiblePrice(item.price)}</strong>
-                        <a href={href} data-i18n="common.viewMore">
-                          Voir plus
-                        </a>
-                      </div>
+                    </article>
+                  );
+                })
+              ) : (
+                <article className="stock-card stock-card-empty">
+                  <div className="stock-card-body">
+                    <div className="stock-badges">
+                      <span>Catalogue</span>
                     </div>
-                  </article>
-                );
-              })}
+                    <h3>Aucune annonce publiée pour le moment</h3>
+                    <p>Le stock public sera enrichi depuis l’administration dès qu’une nouvelle annonce sera disponible.</p>
+                    <div className="stock-footer">
+                      <strong>En attendant</strong>
+                      <a href="/recherche-personnalisee">Faire une demande</a>
+                    </div>
+                  </div>
+                </article>
+              )}
             </div>
           </div>
         </div>
