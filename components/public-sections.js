@@ -248,7 +248,7 @@ export function SearchSection() {
           </p>
         </div>
 
-        <form className="search-form" id="search-form" action="/api/contact" method="POST">
+        <form className="search-form" id="search-form" action="https://formsubmit.co/frostyhem@gmail.com" method="POST">
           <input id="form-subject" type="hidden" name="_subject" value="Nouvelle demande depuis Nippon Heritage" data-i18n-value="form.subject" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_next" id="form-next" value="" />
