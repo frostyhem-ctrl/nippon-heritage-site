@@ -1863,18 +1863,25 @@ if (searchForm) {
     }
 
     try {
+      const payload = Object.fromEntries(formData.entries());
       const response = await fetch("https://formsubmit.co/ajax/frostyhem@gmail.com", {
         method: "POST",
         headers: {
+          "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: formData,
+        body: JSON.stringify(payload),
       });
-      const result = await response.json().catch(() => null);
-      const success = response.ok && result && result.success !== false && result.success !== "false";
+      const responseText = await response.text();
+      let result = null;
+      try {
+        result = responseText ? JSON.parse(responseText) : null;
+      } catch {
+        // Some successful submissions may return a non-JSON response.
+      }
 
-      if (!success) {
-        throw new Error(result?.message || "FormSubmit rejected the submission");
+      if (!response.ok || result?.success === false || result?.success === "false") {
+        throw new Error(result?.message || `FormSubmit returned HTTP ${response.status}`);
       }
 
       const thankYouUrl = formNext?.value || new URL("/merci", window.location.origin).toString();
