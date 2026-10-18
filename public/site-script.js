@@ -1853,8 +1853,6 @@ if (searchForm) {
     formData.set("_subject", String(formData.get("_subject") || "Nouvelle demande depuis Nippon Heritage"));
     if (email) formData.set("_replyto", email);
 
-    const payload = Object.fromEntries(formData.entries());
-
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.textContent = currentLanguage === "en" ? "Sending..." : currentLanguage === "es" ? "Enviando..." : currentLanguage === "it" ? "Invio..." : "Envoi en cours...";
@@ -1868,10 +1866,9 @@ if (searchForm) {
       const response = await fetch("https://formsubmit.co/ajax/frostyhem@gmail.com", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(payload),
+        body: formData,
       });
       const result = await response.json().catch(() => null);
       const success = response.ok && result && result.success !== false && result.success !== "false";
