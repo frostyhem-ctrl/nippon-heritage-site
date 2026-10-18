@@ -1835,6 +1835,72 @@ if (searchBudget) {
   searchBudget.addEventListener("input", updateSearchBudget);
 }
 
+if (searchForm) {
+  searchForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const submitButton = searchForm.querySelector('button[type="submit"]');
+    const feedback = searchForm.querySelector(".form-feedback");
+    const originalButtonText = submitButton?.textContent || "";
+    const formData = new FormData(searchForm);
+    const email = String(formData.get("email") || "").trim();
+
+    formData.delete("_next");
+    formData.delete("_url");
+    formData.delete("_honey");
+    formData.set("_captcha", "false");
+    formData.set("_template", "table");
+    formData.set("_subject", String(formData.get("_subject") || "Nouvelle demande depuis Nippon Heritage"));
+    if (email) formData.set("_replyto", email);
+
+    const payload = Object.fromEntries(formData.entries());
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = currentLanguage === "en" ? "Sending..." : currentLanguage === "es" ? "Enviando..." : currentLanguage === "it" ? "Invio..." : "Envoi en cours...";
+    }
+    if (feedback) {
+      feedback.textContent = currentLanguage === "en" ? "Sending your request securely..." : currentLanguage === "es" ? "Enviando su solicitud..." : currentLanguage === "it" ? "Invio della richiesta..." : "Transmission de votre demande...";
+      feedback.setAttribute("role", "status");
+    }
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/frostyhem@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json().catch(() => null);
+      const success = response.ok && result && result.success !== false && result.success !== "false";
+
+      if (!success) {
+        throw new Error(result?.message || "FormSubmit rejected the submission");
+      }
+
+      const thankYouUrl = formNext?.value || new URL("/merci", window.location.origin).toString();
+      window.location.assign(thankYouUrl);
+    } catch (error) {
+      console.error("Nippon Heritage contact form submission failed:", error);
+      if (feedback) {
+        feedback.textContent = currentLanguage === "en"
+          ? "Unable to send your request right now. Please try again later."
+          : currentLanguage === "es"
+            ? "No se pudo enviar su solicitud. Inténtelo de nuevo más tarde."
+            : currentLanguage === "it"
+              ? "Impossibile inviare la richiesta. Riprova più tardi."
+              : "L'envoi a échoué. Réessayez dans quelques instants.";
+      }
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
+  });
+}
+
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
     setLanguage(button.dataset.lang);
