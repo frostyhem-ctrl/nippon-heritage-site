@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import { getAbsoluteImageUrl, getLocalizedMeta } from "../lib/site";
 import { getGoogleSiteVerification, getSiteUrl } from "../lib/env";
 
@@ -59,7 +60,15 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src="https://olivier56880.github.io/NautIA/kervenoa-widget.js"
+          strategy="afterInteractive"
+          data-client="nippon-heritage"
+          data-company="Nippon Héritage"
+        />
+      </body>
     </html>
   );
 }
