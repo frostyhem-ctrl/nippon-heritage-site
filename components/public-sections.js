@@ -327,6 +327,18 @@ export function SearchSection() {
             </p>
           </div>
         </form>
+
+        <aside className="project-status-note" role="note" aria-label="État d’avancement du projet">
+          <span className="project-status-note__label">Information importante</span>
+          <p>
+            Nippon Heritage n’est pas encore ouvert au public. Le projet est actuellement en phase de préparation
+            et nous recherchons les financements nécessaires à sa concrétisation.
+          </p>
+          <p>
+            Vous pouvez néanmoins nous laisser un message via ce formulaire : nous serons ravis d’échanger avec vous
+            et de vous tenir informé de l’avancement du projet.
+          </p>
+        </aside>
       </div>
     </section>
   );
