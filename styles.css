@@ -1059,3 +1059,132 @@ input[type="range"] {
     transition: none !important;
   }
 }
+
+
+/* Project status popup displayed after a successful form submission */
+.notice-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.notice-modal.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.notice-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 7, 7, 0.82);
+  backdrop-filter: blur(9px);
+}
+
+.notice-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 620px);
+  padding: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-top: 3px solid var(--accent);
+  border-radius: 26px;
+  background: linear-gradient(180deg, #302a2b 0%, #1c1819 100%);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.58);
+  transform: translateY(16px) scale(0.98);
+  transition: transform 220ms ease;
+}
+
+.notice-modal.is-visible .notice-modal__panel {
+  transform: translateY(0) scale(1);
+}
+
+.notice-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.notice-modal__eyebrow {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.notice-modal__panel h2 {
+  max-width: 14ch;
+  margin: 0;
+  color: var(--text);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.3rem, 6vw, 3.4rem);
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.notice-modal__accent {
+  width: 72px;
+  height: 3px;
+  margin: 20px 0;
+  background: var(--accent);
+}
+
+.notice-modal__panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.notice-modal__panel p + p {
+  margin-top: 12px;
+}
+
+.notice-modal__action {
+  margin-top: 24px;
+}
+
+body.notice-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .notice-modal {
+    padding: 14px;
+  }
+
+  .notice-modal__panel {
+    padding: 30px 22px 24px;
+    border-radius: 22px;
+  }
+
+  .notice-modal__panel h2 {
+    max-width: 12ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notice-modal,
+  .notice-modal__panel {
+    transition: none;
+  }
+}
